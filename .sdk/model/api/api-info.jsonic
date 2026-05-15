@@ -1,0 +1,24 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        url: "https://www.freepublicapis.com"
+      }
+      description: "FreePublicAPIs now has a free public API! The Free Public APIs API provides up-to-date information on every free public API listed on freepublicapis.com. Perfect for developers, students and hobbyists. It is limited to 1000 requests a day, if you need more, feel free to reach out. Also if you build something with this API, make sure to add it as a showcase project here."
+      servers: [
+        {
+          description: "Production server"
+          url: "https://www.freepublicapis.com"
+        }
+      ]
+      termsOfService: "https://www.freepublicapis.com/tos"
+      title: "Free Public APIs API"
+      version: "1.0.0"
+    }
+  }
+}
+
+}

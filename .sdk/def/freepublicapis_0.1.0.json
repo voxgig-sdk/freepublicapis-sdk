@@ -1,0 +1,401 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Free Public APIs API",
+    "description": "FreePublicAPIs now has a free public API! The Free Public APIs API provides up-to-date information on every free public API listed on freepublicapis.com. Perfect for developers, students and hobbyists. It is limited to 1000 requests a day, if you need more, feel free to reach out. Also if you build something with this API, make sure to add it as a showcase project here.",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://www.freepublicapis.com"
+    },
+    "termsOfService": "https://www.freepublicapis.com/tos"
+  },
+  "servers": [
+    {
+      "url": "https://www.freepublicapis.com",
+      "description": "Production server"
+    }
+  ],
+  "externalDocs": {
+    "description": "Official API Documentation",
+    "url": "https://www.freepublicapis.com/api"
+  },
+  "paths": {
+    "/api/random": {
+      "get": {
+        "summary": "Get a random API",
+        "description": "Returns a random free public API from the collection of 501+ APIs listed on freepublicapis.com",
+        "operationId": "getRandomAPI",
+        "tags": [
+          "APIs"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with a random API",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/API"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded (1000 requests per day)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/apis/{id}": {
+      "get": {
+        "summary": "Query specific free public API",
+        "description": "Returns details of a specific API by its ID",
+        "operationId": "getAPIById",
+        "tags": [
+          "APIs"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The unique identifier of the API",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "example": 275
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with API details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/API"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "API not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded (1000 requests per day)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/apis": {
+      "get": {
+        "summary": "List all free public APIs",
+        "description": "Returns a paginated list of all free public APIs with optional sorting",
+        "operationId": "listAPIs",
+        "tags": [
+          "APIs"
+        ],
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of APIs to return",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 10,
+              "minimum": 1,
+              "maximum": 100,
+              "example": 10
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Sort order for the results",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "best",
+                "newest",
+                "oldest",
+                "name"
+              ],
+              "default": "best",
+              "example": "best"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Page number for pagination",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 1,
+              "minimum": 1,
+              "example": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with list of APIs",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/APIList"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - invalid parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded (1000 requests per day)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "API": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Unique identifier for the API",
+            "example": 275
+          },
+          "title": {
+            "type": "string",
+            "description": "Name of the API",
+            "example": "Random Data API"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of what the API does",
+            "example": "Generate random data for testing and development"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Base URL of the API",
+            "example": "https://api.example.com"
+          },
+          "documentationUrl": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL to the API documentation",
+            "example": "https://api.example.com/docs"
+          },
+          "cors": {
+            "type": "boolean",
+            "description": "Whether CORS is enabled",
+            "example": true
+          },
+          "auth": {
+            "type": "string",
+            "description": "Authentication method required",
+            "example": "apiKey",
+            "nullable": true
+          },
+          "https": {
+            "type": "boolean",
+            "description": "Whether the API supports HTTPS",
+            "example": true
+          },
+          "reliability": {
+            "type": "number",
+            "format": "float",
+            "description": "Reliability percentage based on monitoring",
+            "example": 99.5,
+            "minimum": 0,
+            "maximum": 100
+          },
+          "avgResponseTime": {
+            "type": "integer",
+            "description": "Average response time in milliseconds",
+            "example": 392,
+            "nullable": true
+          },
+          "errorRate": {
+            "type": "number",
+            "format": "float",
+            "description": "Error rate percentage",
+            "example": 0.5,
+            "minimum": 0,
+            "maximum": 100
+          },
+          "tags": {
+            "type": "array",
+            "description": "Categories/tags associated with the API",
+            "items": {
+              "type": "string"
+            },
+            "example": [
+              "data",
+              "testing",
+              "development"
+            ]
+          },
+          "endpoints": {
+            "type": "array",
+            "description": "Available endpoints for this API",
+            "items": {
+              "type": "object",
+              "properties": {
+                "method": {
+                  "type": "string",
+                  "example": "GET"
+                },
+                "path": {
+                  "type": "string",
+                  "example": "/api/v1/users"
+                },
+                "description": {
+                  "type": "string",
+                  "example": "Get list of users"
+                }
+              }
+            }
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When the API was added to the directory"
+          },
+          "lastChecked": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When the API was last checked for availability"
+          }
+        }
+      },
+      "APIList": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "description": "List of APIs",
+            "items": {
+              "$ref": "#/components/schemas/API"
+            }
+          },
+          "total": {
+            "type": "integer",
+            "description": "Total number of APIs available",
+            "example": 501
+          },
+          "page": {
+            "type": "integer",
+            "description": "Current page number",
+            "example": 1
+          },
+          "limit": {
+            "type": "integer",
+            "description": "Number of items per page",
+            "example": 10
+          },
+          "totalPages": {
+            "type": "integer",
+            "description": "Total number of pages",
+            "example": 51
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Error message",
+            "example": "Rate limit exceeded"
+          },
+          "message": {
+            "type": "string",
+            "description": "Detailed error message",
+            "example": "You have exceeded the daily limit of 1000 requests. Please try again tomorrow."
+          },
+          "statusCode": {
+            "type": "integer",
+            "description": "HTTP status code",
+            "example": 429
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "APIs",
+      "description": "Operations related to querying free public APIs"
+    }
+  ]
+}

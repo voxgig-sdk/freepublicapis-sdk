@@ -1,0 +1,85 @@
+{
+  "existing": {
+    "api": {
+      "API00": {
+        "auth": "saa",
+        "avg_response_time": "sab",
+        "cor": true,
+        "created_at": "sad",
+        "description": "sae",
+        "documentation_url": "saf",
+        "endpoint": [],
+        "error_rate": 177,
+        "http": true,
+        "id": "API00",
+        "last_checked": "sb4",
+        "method": "sb5",
+        "path": "sb6",
+        "reliability": 183,
+        "tag": [],
+        "title": "sb9",
+        "url": "sba"
+      },
+      "API01": {
+        "auth": "s154",
+        "avg_response_time": "s155",
+        "cor": true,
+        "created_at": "s157",
+        "description": "s158",
+        "documentation_url": "s159",
+        "endpoint": [],
+        "error_rate": 347,
+        "http": true,
+        "id": "API01",
+        "last_checked": "s15e",
+        "method": "s15f",
+        "path": "s160",
+        "reliability": 353,
+        "tag": [],
+        "title": "s163",
+        "url": "s164"
+      },
+      "API02": {
+        "auth": "s1fe",
+        "avg_response_time": "s1ff",
+        "cor": true,
+        "created_at": "s201",
+        "description": "s202",
+        "documentation_url": "s203",
+        "endpoint": [],
+        "error_rate": 517,
+        "http": true,
+        "id": "API02",
+        "last_checked": "s208",
+        "method": "s209",
+        "path": "s20a",
+        "reliability": 523,
+        "tag": [],
+        "title": "s20d",
+        "url": "s20e"
+      }
+    }
+  },
+  "new": {
+    "api": {
+      "api_ref01": {
+        "auth": "s2a8",
+        "avg_response_time": "s2a9",
+        "cor": true,
+        "created_at": "s2ab",
+        "description": "s2ac",
+        "documentation_url": "s2ad",
+        "endpoint": [],
+        "error_rate": 687,
+        "http": true,
+        "last_checked": "s2b2",
+        "method": "s2b3",
+        "path": "s2b4",
+        "reliability": 693,
+        "tag": [],
+        "title": "s2b7",
+        "url": "s2b8"
+      }
+    }
+  }
+}
