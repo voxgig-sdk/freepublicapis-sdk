@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/freepublicapis-sdk"
-	"github.com/voxgig-sdk/freepublicapis-sdk/core"
+	sdk "github.com/voxgig-sdk/freepublicapis-sdk/go"
+	"github.com/voxgig-sdk/freepublicapis-sdk/go/core"
 )
 
 func TestApiDirect(t *testing.T) {

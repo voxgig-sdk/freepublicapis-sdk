@@ -1,7 +1,7 @@
 package feature
 
 import (
-	"github.com/voxgig-sdk/freepublicapis-sdk/core"
+	"github.com/voxgig-sdk/freepublicapis-sdk/go/core"
 )
 
 type BaseFeature struct {
