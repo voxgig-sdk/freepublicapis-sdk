@@ -17,8 +17,23 @@ main: {
       termsOfService: "https://www.freepublicapis.com/tos"
       title: "Free Public APIs API"
       version: "1.0.0"
+      tagline: "Browse the freepublicapis.com directory of free public APIs programmatically"
+      homepage: "https://www.freepublicapis.com"
+      docs_url: "https://freepublicapis.com/api"
+      about_md: `The Free Public APIs API exposes the catalogue behind [freepublicapis.com](https://www.freepublicapis.com), a community-curated directory of free public APIs aimed at students, developers, and hobbyists. The site tests listed APIs daily and tracks health metrics for each entry.
+
+What you get from the API:
+
+- API metadata: names, descriptions, categories, and documentation links
+- Health metrics: reliability scores, error rates, response times, and 30-day uptime history
+- CORS availability status for each listed API
+- Listing, filtering, and random-pick access to the full catalogue
+
+The API is capped at 1,000 requests per day, with higher limits available on request. Listings span 25+ categories covering AI, development, finance, gaming, music, science, transportation, weather, and more.`
+      entity_desc: {
+        api: "An entry in the freepublicapis.com directory, representing a single cataloged public API along with its metadata, health metrics, category, and documentation links."
+      }
+      auth: false
     }
   }
-}
-
 }

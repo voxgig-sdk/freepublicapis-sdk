@@ -121,14 +121,12 @@ function api_direct_setup($mockres)
     $env = Runner::env_override([
         "FREEPUBLICAPIS_TEST_API_ENTID" => [],
         "FREEPUBLICAPIS_TEST_LIVE" => "FALSE",
-        "FREEPUBLICAPIS_APIKEY" => "NONE",
     ]);
 
     $live = $env["FREEPUBLICAPIS_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
-            "apikey" => $env["FREEPUBLICAPIS_APIKEY"],
         ];
         $client = new FreepublicapisSDK($merged_opts);
         return [

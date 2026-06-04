@@ -175,14 +175,12 @@ func apiDirectSetup(mockres any) *apiDirectSetupResult {
 	env := envOverride(map[string]any{
 		"FREEPUBLICAPIS_TEST_API_ENTID": map[string]any{},
 		"FREEPUBLICAPIS_TEST_LIVE":    "FALSE",
-		"FREEPUBLICAPIS_APIKEY":       "NONE",
 	})
 
 	live := env["FREEPUBLICAPIS_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
-			"apikey": env["FREEPUBLICAPIS_APIKEY"],
 		}
 		client := sdk.NewFreepublicapisSDK(mergedOpts)
 
