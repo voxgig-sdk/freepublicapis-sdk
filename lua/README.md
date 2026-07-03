@@ -10,7 +10,7 @@ The Lua SDK for the Freepublicapis API — an entity-oriented client using Lua c
 
 ## Install
 ```bash
-luarocks install freepublicapis-sdk
+luarocks install voxgig-sdk-freepublicapis
 ```
 
 If the module is not yet published, add the source directory to

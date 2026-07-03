@@ -10,7 +10,7 @@ The PHP SDK for the Freepublicapis API — an entity-oriented client using PHP c
 
 ## Install
 ```bash
-composer require voxgig/freepublicapis-sdk
+composer require voxgig-sdk/freepublicapis
 ```
 
 

@@ -10,7 +10,7 @@ The TypeScript SDK for the Freepublicapis API — a type-safe, entity-oriented c
 
 ## Install
 ```bash
-npm install freepublicapis
+npm install @voxgig-sdk/freepublicapis
 ```
 ## Tutorial: your first API call
 

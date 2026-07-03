@@ -1,7 +1,23 @@
 {
   "name": "@voxgig-sdk/freepublicapis",
   "version": "0.0.1",
-  "description": "DESCRIPTION",
+  "description": "Unofficial generated TypeScript SDK for the Free Public APIs public API. Not affiliated with or endorsed by the upstream API provider.",
+  "keywords": [
+    "voxgig",
+    "sdk",
+    "generated-sdk",
+    "openapi",
+    "api-client",
+    "freepublicapis"
+  ],
+  "homepage": "https://github.com/voxgig-sdk/freepublicapis-sdk#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/voxgig-sdk/freepublicapis-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/voxgig-sdk/freepublicapis-sdk/issues"
+  },
   "main": "dist/FreepublicapisSDK.js",
   "type": "commonjs",
   "types": "dist/FreepublicapisSDK.d.ts",
@@ -14,7 +30,10 @@
     "clean": "rm -rf node_modules yarn.lock package-lock.json",
     "reset": "npm run clean && npm i && npm run build && npm test"
   },
-  "author": "Freepublicapis",
+  "author": {
+    "name": "Voxgig",
+    "url": "https://voxgig.com"
+  },
   "license": "MIT",
   "dependencies": {},
   "peerDependencies": {},
