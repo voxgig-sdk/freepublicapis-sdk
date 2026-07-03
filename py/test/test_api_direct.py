@@ -106,12 +106,14 @@ def _api_direct_setup(mockres):
     env = runner.env_override({
         "FREEPUBLICAPIS_TEST_API_ENTID": {},
         "FREEPUBLICAPIS_TEST_LIVE": "FALSE",
+        "FREEPUBLICAPIS_APIKEY": "NONE",
     })
 
     live = env.get("FREEPUBLICAPIS_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
+            "apikey": env.get("FREEPUBLICAPIS_APIKEY"),
         }
         client = FreepublicapisSDK(merged_opts)
         return {

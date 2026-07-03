@@ -115,12 +115,14 @@ function api_direct_setup(mockres)
   local env = runner.env_override({
     ["FREEPUBLICAPIS_TEST_API_ENTID"] = {},
     ["FREEPUBLICAPIS_TEST_LIVE"] = "FALSE",
+    ["FREEPUBLICAPIS_APIKEY"] = "NONE",
   })
 
   local live = env["FREEPUBLICAPIS_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
+      apikey = env["FREEPUBLICAPIS_APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {

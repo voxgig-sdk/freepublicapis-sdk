@@ -1,21 +1,8 @@
 # Freepublicapis SDK
 
-Browse the freepublicapis.com directory of free public APIs programmatically
+Free Public APIs API client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About Free Public APIs API
-
-The Free Public APIs API exposes the catalogue behind [freepublicapis.com](https://www.freepublicapis.com), a community-curated directory of free public APIs aimed at students, developers, and hobbyists. The site tests listed APIs daily and tracks health metrics for each entry.
-
-What you get from the API:
-
-- API metadata: names, descriptions, categories, and documentation links
-- Health metrics: reliability scores, error rates, response times, and 30-day uptime history
-- CORS availability status for each listed API
-- Listing, filtering, and random-pick access to the full catalogue
-
-The API is capped at 1,000 requests per day, with higher limits available on request. Listings span 25+ categories covering AI, development, finance, gaming, music, science, transportation, weather, and more.
 
 ## Try it
 
@@ -49,29 +36,31 @@ gem install freepublicapis-sdk
 luarocks install freepublicapis-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { FreepublicapisSDK } from 'freepublicapis'
 
-const client = new FreepublicapisSDK({})
+const client = new FreepublicapisSDK({
+  apikey: process.env.FREEPUBLICAPIS_APIKEY,
+})
 
 // List all apis
 const apis = await client.Api().list()
+console.log(apis.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -101,7 +90,7 @@ The API exposes one entity:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **Api** | An entry in the freepublicapis.com directory, representing a single cataloged public API along with its metadata, health metrics, category, and documentation links. | `/api/apis` |
+| **Api** |  | `/api/apis` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -111,17 +100,20 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from freepublicapis_sdk import FreepublicapisSDK
 
-client = FreepublicapisSDK({})
+client = FreepublicapisSDK({
+    "apikey": os.environ.get("FREEPUBLICAPIS_APIKEY"),
+})
 
 # List all apis
-apis, err = client.Api(None).list(None, None)
+apis, err = client.Api().list()
+print(apis)
 
 # Load a specific api
-api, err = client.Api(None).load(
-    {"id": "example_id"}, None
-)
+api, err = client.Api().load({"id": "example_id"})
+print(api)
 ```
 
 ### PHP
@@ -130,15 +122,17 @@ api, err = client.Api(None).load(
 <?php
 require_once 'freepublicapis_sdk.php';
 
-$client = new FreepublicapisSDK([]);
+$client = new FreepublicapisSDK([
+    "apikey" => getenv("FREEPUBLICAPIS_APIKEY"),
+]);
 
 // List all apis
-[$apis, $err] = $client->Api(null)->list(null, null);
+[$apis, $err] = $client->Api()->list();
+print_r($apis);
 
 // Load a specific api
-[$api, $err] = $client->Api(null)->load(
-    ["id" => "example_id"], null
-);
+[$api, $err] = $client->Api()->load(["id" => "example_id"]);
+print_r($api);
 ```
 
 ### Golang
@@ -146,10 +140,13 @@ $client = new FreepublicapisSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/freepublicapis-sdk/go"
 
-client := sdk.NewFreepublicapisSDK(map[string]any{})
+client := sdk.NewFreepublicapisSDK(map[string]any{
+    "apikey": os.Getenv("FREEPUBLICAPIS_APIKEY"),
+})
 
 // List all apis
 apis, err := client.Api(nil).List(nil, nil)
+fmt.Println(apis)
 ```
 
 ### Ruby
@@ -157,15 +154,17 @@ apis, err := client.Api(nil).List(nil, nil)
 ```ruby
 require_relative "Freepublicapis_sdk"
 
-client = FreepublicapisSDK.new({})
+client = FreepublicapisSDK.new({
+  "apikey" => ENV["FREEPUBLICAPIS_APIKEY"],
+})
 
 # List all apis
-apis, err = client.Api(nil).list(nil, nil)
+apis, err = client.Api().list
+puts apis
 
 # Load a specific api
-api, err = client.Api(nil).load(
-  { "id" => "example_id" }, nil
-)
+api, err = client.Api().load({ "id" => "example_id" })
+puts api
 ```
 
 ### Lua
@@ -173,15 +172,17 @@ api, err = client.Api(nil).load(
 ```lua
 local sdk = require("freepublicapis_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("FREEPUBLICAPIS_APIKEY"),
+})
 
 -- List all apis
-local apis, err = client:Api(nil):list(nil, nil)
+local apis, err = client:Api():list()
+print(apis)
 
 -- Load a specific api
-local api, err = client:Api(nil):load(
-  { id = "example_id" }, nil
-)
+local api, err = client:Api():load({ id = "example_id" })
+print(api)
 ```
 
 ## Unit testing in offline mode
@@ -200,25 +201,21 @@ const result = await client.Api().load({ id: 'test01' })
 ### Python
 
 ```python
-client = FreepublicapisSDK.test(None, None)
-result, err = client.Api(None).load(
-    {"id": "test01"}, None
-)
+client = FreepublicapisSDK.test()
+result, err = client.Api().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = FreepublicapisSDK::test(null, null);
-[$result, $err] = $client->Api(null)->load(
-    ["id" => "test01"], null
-);
+$client = FreepublicapisSDK::test();
+[$result, $err] = $client->Api()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.Api(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -227,19 +224,15 @@ result, err := client.Api(nil).Load(
 ### Ruby
 
 ```ruby
-client = FreepublicapisSDK.test(nil, nil)
-result, err = client.Api(nil).load(
-  { "id" => "test01" }, nil
-)
+client = FreepublicapisSDK.test
+result, err = client.Api().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:Api(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:Api():load({ id = "test01" })
 ```
 
 ## How it works
@@ -343,11 +336,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the Free Public APIs API
-
-- Upstream: [https://www.freepublicapis.com](https://www.freepublicapis.com)
-- API docs: [https://freepublicapis.com/api](https://freepublicapis.com/api)
 
 ---
 
