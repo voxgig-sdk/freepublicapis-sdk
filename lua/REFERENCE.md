@@ -83,7 +83,7 @@ same parameters as `direct()`.
 ## ApiEntity
 
 ```lua
-local api = client:api(nil)
+local api = client:Api(nil)
 ```
 
 ### Fields
@@ -115,7 +115,7 @@ local api = client:api(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:api():list()
+local results, err = client:Api():list()
 ```
 
 #### `load(reqmatch, ctrl) -> any, err`
@@ -123,7 +123,7 @@ local results, err = client:api():list()
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:api():load({ id = "api_id" })
+local result, err = client:Api():load({ id = "api_id" })
 ```
 
 ### Common Methods

@@ -109,7 +109,7 @@ Alias for `FreepublicapisSDK.test()`.
 ## ApiEntity
 
 ```ts
-const api = client.api
+const api = client.Api()
 ```
 
 ### Fields
@@ -141,7 +141,7 @@ const api = client.api
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.api.list()
+const results = await client.Api().list()
 ```
 
 #### `load(match: object, ctrl?: object)`
@@ -149,7 +149,7 @@ const results = await client.api.list()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.api.load({ id: 'api_id' })
+const result = await client.Api().load({ id: 'api_id' })
 ```
 
 ### Common Methods

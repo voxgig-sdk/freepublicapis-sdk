@@ -85,7 +85,7 @@ Prepare a fetch definition without sending the request. Returns the
 ## ApiEntity
 
 ```php
-$api = $client->api();
+$api = $client->Api();
 ```
 
 ### Fields
@@ -117,7 +117,7 @@ $api = $client->api();
 List entities matching the given criteria. Returns an array. Throws on error.
 
 ```php
-$results = $client->api()->list([]);
+$results = $client->Api()->list([]);
 ```
 
 #### `load(array $reqmatch, ?array $ctrl = null): mixed`
@@ -125,7 +125,7 @@ $results = $client->api()->list([]);
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->api()->load(["id" => "api_id"]);
+$result = $client->Api()->load(["id" => "api_id"]);
 ```
 
 ### Common Methods

@@ -26,9 +26,11 @@ import { FreepublicapisSDK } from '@voxgig-sdk/freepublicapis'
 
 const client = new FreepublicapisSDK()
 
-// List all apis
-const apis = await client.api.list()
-console.log(apis.data)
+// List all apis (returns Api[])
+const apis = await client.Api().list()
+for (const api of apis) {
+  console.log(api)
+}
 ```
 
 See the [TypeScript README](ts/README.md) for the full guide.
@@ -83,12 +85,13 @@ from freepublicapis_sdk import FreepublicapisSDK
 
 client = FreepublicapisSDK()
 
-# List all apis
-apis = client.api.list()
-print(apis)
+# List all apis (returns a list, raises on error)
+apis = client.Api().list({})
+for api in apis:
+    print(api)
 
-# Load a specific api
-api = client.api.load({"id": "example_id"})
+# Load a specific api (returns the record, raises on error)
+api = client.Api().load({"id": "example_id"})
 print(api)
 ```
 
@@ -100,12 +103,12 @@ require_once 'freepublicapis_sdk.php';
 
 $client = new FreepublicapisSDK();
 
-// List all apis (throws on error)
-$apis = $client->api()->list();
+// List all apis (returns an array; throws on error)
+$apis = $client->Api()->list();
 print_r($apis);
 
-// Load a specific api
-$api = $client->api()->load(["id" => "example_id"]);
+// Load a specific api (returns the bare record; throws on error)
+$api = $client->Api()->load(["id" => "example_id"]);
 print_r($api);
 ```
 
@@ -128,12 +131,12 @@ require_relative "Freepublicapis_sdk"
 
 client = FreepublicapisSDK.new
 
-# List all apis
-apis = client.api.list
+# List all apis (returns an Array; raises on error)
+apis = client.Api.list
 puts apis
 
-# Load a specific api
-api = client.api.load({ "id" => "example_id" })
+# Load a specific api (returns the bare record; raises on error)
+api = client.Api.load({ "id" => "example_id" })
 puts api
 ```
 
@@ -145,11 +148,11 @@ local sdk = require("freepublicapis_sdk")
 local client = sdk.new()
 
 -- List all apis
-local apis, err = client:api():list()
+local apis, err = client:Api():list()
 print(apis)
 
 -- Load a specific api
-local api, err = client:api():load({ id = "example_id" })
+local api, err = client:Api():load({ id = "example_id" })
 print(api)
 ```
 
@@ -162,22 +165,27 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = FreepublicapisSDK.test()
-const result = await client.api.load({ id: 'test01' })
-// result.ok === true, result.data contains mock data
+const api = await client.Api().load({ id: 1 })
+// api is a bare Api populated with mock data
+console.log(api)
 ```
 
 ### Python
 
 ```python
 client = FreepublicapisSDK.test()
-result = client.api.load({"id": "test01"})
+api = client.Api().load({"id": "test01"})
+print(api)
 ```
 
 ### PHP
 
 ```php
-$client = FreepublicapisSDK::test();
-$result = $client->api()->load(["id" => "test01"]);
+// Seed fixture data so offline calls resolve without a live server.
+$client = FreepublicapisSDK::test([
+    "entity" => ["api" => ["test01" => ["id" => "test01"]]],
+]);
+$api = $client->Api()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -192,15 +200,18 @@ result, err := client.Api(nil).Load(
 ### Ruby
 
 ```ruby
-client = FreepublicapisSDK.test
-result = client.api.load({ "id" => "test01" })
+# Seed fixture data so offline calls resolve without a live server.
+client = FreepublicapisSDK.test({
+  "entity" => { "api" => { "test01" => { "id" => "test01" } } },
+})
+api = client.Api.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:api():load({ id = "test01" })
+local result, err = client:Api():load({ id = "test01" })
 ```
 
 ## How it works
@@ -248,6 +259,9 @@ const result = await client.direct({
   method: 'GET',
   params: { id: 'example' },
 })
+if (result instanceof Error) {
+  throw result
+}
 console.log(result.data)
 ```
 

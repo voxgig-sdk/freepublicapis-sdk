@@ -4,56 +4,57 @@
 # params (op.<name>.points[].args.params[]). Field/param types come from the
 # canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 # @voxgig/apidef VALID_CANON). Do not edit by hand.
+#
+# These are TypedDicts, not dataclasses: the SDK ops return/accept plain dicts
+# at runtime, and a TypedDict IS a dict shape, so the types match the runtime.
+# Optional (req:false) keys are modelled as TypedDict key-optionality
+# (total=False), split into a required base + total=False subclass when a type
+# has both required and optional keys.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import Optional, Any
+from typing import TypedDict, Any
 
 
-@dataclass
-class Api:
-    auth: Optional[str] = None
-    avg_response_time: Optional[int] = None
-    cor: Optional[bool] = None
-    created_at: Optional[str] = None
-    description: Optional[str] = None
-    documentation_url: Optional[str] = None
-    endpoint: Optional[list] = None
-    error_rate: Optional[float] = None
-    http: Optional[bool] = None
-    id: Optional[int] = None
-    last_checked: Optional[str] = None
-    method: Optional[str] = None
-    path: Optional[str] = None
-    reliability: Optional[float] = None
-    tag: Optional[list] = None
-    title: Optional[str] = None
-    url: Optional[str] = None
+class Api(TypedDict, total=False):
+    auth: str
+    avg_response_time: int
+    cor: bool
+    created_at: str
+    description: str
+    documentation_url: str
+    endpoint: list
+    error_rate: float
+    http: bool
+    id: int
+    last_checked: str
+    method: str
+    path: str
+    reliability: float
+    tag: list
+    title: str
+    url: str
 
 
-@dataclass
-class ApiLoadMatch:
+class ApiLoadMatch(TypedDict):
     id: int
 
 
-@dataclass
-class ApiListMatch:
-    auth: Optional[str] = None
-    avg_response_time: Optional[int] = None
-    cor: Optional[bool] = None
-    created_at: Optional[str] = None
-    description: Optional[str] = None
-    documentation_url: Optional[str] = None
-    endpoint: Optional[list] = None
-    error_rate: Optional[float] = None
-    http: Optional[bool] = None
-    id: Optional[int] = None
-    last_checked: Optional[str] = None
-    method: Optional[str] = None
-    path: Optional[str] = None
-    reliability: Optional[float] = None
-    tag: Optional[list] = None
-    title: Optional[str] = None
-    url: Optional[str] = None
-
+class ApiListMatch(TypedDict, total=False):
+    auth: str
+    avg_response_time: int
+    cor: bool
+    created_at: str
+    description: str
+    documentation_url: str
+    endpoint: list
+    error_rate: float
+    http: bool
+    id: int
+    last_checked: str
+    method: str
+    path: str
+    reliability: float
+    tag: list
+    title: str
+    url: str
