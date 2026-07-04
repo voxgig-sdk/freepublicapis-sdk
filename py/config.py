@@ -15,9 +15,6 @@ def make_config():
         },
         "options": {
             "base": "https://www.freepublicapis.com",
-            "auth": {
-                "prefix": "Bearer",
-            },
             "headers": {
         "content-type": "application/json",
       },
@@ -243,6 +240,7 @@ def make_config():
                       "orig": "id",
                       "reqd": True,
                       "type": "`$INTEGER`",
+                      "index$": 0,
                     },
                   ],
                 },

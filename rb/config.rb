@@ -15,9 +15,6 @@ module FreepublicapisConfig
       },
       "options" => {
         "base" => "https://www.freepublicapis.com",
-        "auth" => {
-          "prefix" => "Bearer",
-        },
         "headers" => {
           "content-type" => "application/json",
         },
@@ -243,6 +240,7 @@ module FreepublicapisConfig
                         "orig" => "id",
                         "reqd" => true,
                         "type" => "`$INTEGER`",
+                        "index$" => 0,
                       },
                     ],
                   },

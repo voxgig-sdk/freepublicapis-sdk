@@ -50,16 +50,14 @@ class ApiEntityTest extends TestCase
         $api_ref01_ent = $client->Api(null);
         $api_ref01_match = [];
 
-        [$api_ref01_list_result, $err] = $api_ref01_ent->list($api_ref01_match, null);
-        $this->assertNull($err);
+        $api_ref01_list_result = $api_ref01_ent->list($api_ref01_match, null);
         $this->assertIsArray($api_ref01_list_result);
 
         // LOAD
         $api_ref01_match_dt0 = [
             "id" => $api_ref01_data["id"],
         ];
-        [$api_ref01_data_dt0_loaded, $err] = $api_ref01_ent->load($api_ref01_match_dt0, null);
-        $this->assertNull($err);
+        $api_ref01_data_dt0_loaded = $api_ref01_ent->load($api_ref01_match_dt0, null);
         $api_ref01_data_dt0_load_result = Helpers::to_map($api_ref01_data_dt0_loaded);
         $this->assertNotNull($api_ref01_data_dt0_load_result);
         $this->assertEquals($api_ref01_data_dt0_load_result["id"], $api_ref01_data["id"]);
@@ -96,7 +94,6 @@ function api_basic_setup($extra)
         "FREEPUBLICAPIS_TEST_API_ENTID" => $idmap,
         "FREEPUBLICAPIS_TEST_LIVE" => "FALSE",
         "FREEPUBLICAPIS_TEST_EXPLAIN" => "FALSE",
-        "FREEPUBLICAPIS_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -108,7 +105,6 @@ function api_basic_setup($extra)
     if ($env["FREEPUBLICAPIS_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["FREEPUBLICAPIS_APIKEY"],
             ],
             $extra ?? [],
         ]);

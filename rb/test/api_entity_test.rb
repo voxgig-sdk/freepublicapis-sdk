@@ -43,16 +43,14 @@ class ApiEntityTest < Minitest::Test
     api_ref01_ent = client.Api(nil)
     api_ref01_match = {}
 
-    api_ref01_list_result, err = api_ref01_ent.list(api_ref01_match, nil)
-    assert_nil err
+    api_ref01_list_result = api_ref01_ent.list(api_ref01_match, nil)
     assert api_ref01_list_result.is_a?(Array)
 
     # LOAD
     api_ref01_match_dt0 = {
       "id" => api_ref01_data["id"],
     }
-    api_ref01_data_dt0_loaded, err = api_ref01_ent.load(api_ref01_match_dt0, nil)
-    assert_nil err
+    api_ref01_data_dt0_loaded = api_ref01_ent.load(api_ref01_match_dt0, nil)
     api_ref01_data_dt0_load_result = Helpers.to_map(api_ref01_data_dt0_loaded)
     assert !api_ref01_data_dt0_load_result.nil?
     assert_equal api_ref01_data_dt0_load_result["id"], api_ref01_data["id"]
@@ -93,7 +91,6 @@ def api_basic_setup(extra)
     "FREEPUBLICAPIS_TEST_API_ENTID" => idmap,
     "FREEPUBLICAPIS_TEST_LIVE" => "FALSE",
     "FREEPUBLICAPIS_TEST_EXPLAIN" => "FALSE",
-    "FREEPUBLICAPIS_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -105,7 +102,6 @@ def api_basic_setup(extra)
   if env["FREEPUBLICAPIS_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["FREEPUBLICAPIS_APIKEY"],
       },
       extra || {},
     ])

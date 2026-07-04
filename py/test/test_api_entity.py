@@ -50,16 +50,14 @@ class TestApiEntity:
         api_ref01_ent = client.Api(None)
         api_ref01_match = {}
 
-        api_ref01_list_result, err = api_ref01_ent.list(api_ref01_match, None)
-        assert err is None
+        api_ref01_list_result = api_ref01_ent.list(api_ref01_match, None)
         assert isinstance(api_ref01_list_result, list)
 
         # LOAD
         api_ref01_match_dt0 = {
             "id": api_ref01_data["id"],
         }
-        api_ref01_data_dt0_loaded, err = api_ref01_ent.load(api_ref01_match_dt0, None)
-        assert err is None
+        api_ref01_data_dt0_loaded = api_ref01_ent.load(api_ref01_match_dt0, None)
         api_ref01_data_dt0_load_result = helpers.to_map(api_ref01_data_dt0_loaded)
         assert api_ref01_data_dt0_load_result is not None
         assert api_ref01_data_dt0_load_result["id"] == api_ref01_data["id"]
@@ -102,7 +100,6 @@ def _api_basic_setup(extra):
         "FREEPUBLICAPIS_TEST_API_ENTID": idmap,
         "FREEPUBLICAPIS_TEST_LIVE": "FALSE",
         "FREEPUBLICAPIS_TEST_EXPLAIN": "FALSE",
-        "FREEPUBLICAPIS_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -113,7 +110,6 @@ def _api_basic_setup(extra):
     if env.get("FREEPUBLICAPIS_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("FREEPUBLICAPIS_APIKEY"),
             },
             extra or {},
         ])

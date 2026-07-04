@@ -18,7 +18,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `object` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -110,7 +109,7 @@ Alias for `FreepublicapisSDK.test()`.
 ## ApiEntity
 
 ```ts
-const api = client.Api()
+const api = client.api
 ```
 
 ### Fields
@@ -142,7 +141,7 @@ const api = client.Api()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.Api().list()
+const results = await client.api.list()
 ```
 
 #### `load(match: object, ctrl?: object)`
@@ -150,7 +149,7 @@ const results = await client.Api().list()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Api().load({ id: 'api_id' })
+const result = await client.api.load({ id: 'api_id' })
 ```
 
 ### Common Methods
