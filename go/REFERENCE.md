@@ -97,23 +97,23 @@ api := client.Api(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `auth` | ``$STRING`` | No |  |
-| `avg_response_time` | ``$INTEGER`` | No |  |
-| `cor` | ``$BOOLEAN`` | No |  |
-| `created_at` | ``$STRING`` | No |  |
-| `description` | ``$STRING`` | No |  |
-| `documentation_url` | ``$STRING`` | No |  |
-| `endpoint` | ``$ARRAY`` | No |  |
-| `error_rate` | ``$NUMBER`` | No |  |
-| `http` | ``$BOOLEAN`` | No |  |
-| `id` | ``$INTEGER`` | No |  |
-| `last_checked` | ``$STRING`` | No |  |
-| `method` | ``$STRING`` | No |  |
-| `path` | ``$STRING`` | No |  |
-| `reliability` | ``$NUMBER`` | No |  |
-| `tag` | ``$ARRAY`` | No |  |
-| `title` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `auth` | `string` | No |  |
+| `avg_response_time` | `int` | No |  |
+| `cor` | `bool` | No |  |
+| `created_at` | `string` | No |  |
+| `description` | `string` | No |  |
+| `documentation_url` | `string` | No |  |
+| `endpoint` | `[]any` | No |  |
+| `error_rate` | `float64` | No |  |
+| `http` | `bool` | No |  |
+| `id` | `int` | No |  |
+| `last_checked` | `string` | No |  |
+| `method` | `string` | No |  |
+| `path` | `string` | No |  |
+| `reliability` | `float64` | No |  |
+| `tag` | `[]any` | No |  |
+| `title` | `string` | No |  |
+| `url` | `string` | No |  |
 
 ### Operations
 

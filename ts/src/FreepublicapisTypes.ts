@@ -29,5 +29,23 @@ export interface ApiLoadMatch {
   id: number
 }
 
-export type ApiListMatch = Partial<Api>
+export interface ApiListMatch {
+  auth?: string
+  avg_response_time?: number
+  cor?: boolean
+  created_at?: string
+  description?: string
+  documentation_url?: string
+  endpoint?: any[]
+  error_rate?: number
+  http?: boolean
+  id?: number
+  last_checked?: string
+  method?: string
+  path?: string
+  reliability?: number
+  tag?: any[]
+  title?: string
+  url?: string
+}
 

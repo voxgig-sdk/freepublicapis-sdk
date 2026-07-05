@@ -45,11 +45,11 @@ $client = FreepublicapisSDK::test();
 
 Create a new `ApiEntity` instance. Pass `null` for no initial data.
 
-#### `optionsMap(): array`
+#### `options_map(): array`
 
 Return a deep copy of the current SDK options.
 
-#### `getUtility(): ProjectNameUtility`
+#### `get_utility(): FreepublicapisUtility`
 
 Return a copy of the SDK utility object.
 
@@ -92,32 +92,32 @@ $api = $client->Api();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `auth` | ``$STRING`` | No |  |
-| `avg_response_time` | ``$INTEGER`` | No |  |
-| `cor` | ``$BOOLEAN`` | No |  |
-| `created_at` | ``$STRING`` | No |  |
-| `description` | ``$STRING`` | No |  |
-| `documentation_url` | ``$STRING`` | No |  |
-| `endpoint` | ``$ARRAY`` | No |  |
-| `error_rate` | ``$NUMBER`` | No |  |
-| `http` | ``$BOOLEAN`` | No |  |
-| `id` | ``$INTEGER`` | No |  |
-| `last_checked` | ``$STRING`` | No |  |
-| `method` | ``$STRING`` | No |  |
-| `path` | ``$STRING`` | No |  |
-| `reliability` | ``$NUMBER`` | No |  |
-| `tag` | ``$ARRAY`` | No |  |
-| `title` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `auth` | `string` | No |  |
+| `avg_response_time` | `int` | No |  |
+| `cor` | `bool` | No |  |
+| `created_at` | `string` | No |  |
+| `description` | `string` | No |  |
+| `documentation_url` | `string` | No |  |
+| `endpoint` | `array` | No |  |
+| `error_rate` | `float` | No |  |
+| `http` | `bool` | No |  |
+| `id` | `int` | No |  |
+| `last_checked` | `string` | No |  |
+| `method` | `string` | No |  |
+| `path` | `string` | No |  |
+| `reliability` | `float` | No |  |
+| `tag` | `array` | No |  |
+| `title` | `string` | No |  |
+| `url` | `string` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->Api()->list([]);
+$results = $client->Api()->list();
 ```
 
 #### `load(array $reqmatch, ?array $ctrl = null): mixed`
@@ -130,19 +130,19 @@ $result = $client->Api()->load(["id" => "api_id"]);
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -151,7 +151,7 @@ Set the entity match criteria.
 Create a new `ApiEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 

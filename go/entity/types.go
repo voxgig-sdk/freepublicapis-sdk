@@ -34,8 +34,7 @@ type ApiLoadMatch struct {
 	Id int `json:"id"`
 }
 
-// ApiListMatch mirrors the api fields as an all-optional match
-// filter (Go analog of Partial<Api>).
+// ApiListMatch is the typed request payload for Api.ListTyped.
 type ApiListMatch struct {
 	Auth *string `json:"auth,omitempty"`
 	AvgResponseTime *int `json:"avg_response_time,omitempty"`

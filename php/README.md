@@ -4,6 +4,8 @@
 
 The PHP SDK for the Freepublicapis API — an entity-oriented client using PHP conventions.
 
+The SDK exposes the API as capitalised, semantic **Entities** — for example `$client->Api()` — with named operations (`list`/`load`) instead of raw URL paths and query strings. Working with resources and verbs keeps call sites self-describing and reduces cognitive load.
+
 > Other languages, the CLI, and MCP server live alongside this one — see
 > the [top-level README](../README.md).
 
@@ -36,7 +38,7 @@ try {
     // list() returns an array of Api records — iterate directly.
     $apis = $client->Api()->list();
     foreach ($apis as $item) {
-        echo $item["id"] . " " . $item["name"] . "\n";
+        echo $item["id"] . " " . $item["auth"] . "\n";
     }
 } catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
@@ -52,6 +54,37 @@ try {
     print_r($api);
 } catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
+}
+```
+
+
+## Error handling
+
+Entity operations throw a `\Throwable` on failure, so wrap them in
+`try` / `catch`:
+
+```php
+try {
+    $apis = $client->Api()->list();
+} catch (\Throwable $err) {
+    echo "Error: " . $err->getMessage();
+}
+```
+
+`direct()` does **not** throw — it returns the result array. Branch on
+`ok`; on failure `status` holds the HTTP status (for error responses) and
+`err` holds a transport error, so read both defensively:
+
+```php
+$result = $client->direct([
+    "path" => "/api/resource/{id}",
+    "method" => "GET",
+    "params" => ["id" => "example_id"],
+]);
+
+if (! $result["ok"]) {
+    $err = $result["err"] ?? null;
+    echo "request failed: " . ($err ? $err->getMessage() : "HTTP " . $result["status"]);
 }
 ```
 
@@ -75,7 +108,10 @@ if ($result["ok"]) {
     echo $result["status"];  // 200
     print_r($result["data"]);  // response body
 } else {
-    echo "Error: " . $result["err"]->getMessage();
+    // On an HTTP error status there is no err (only a transport failure sets
+    // it), so fall back to the status code.
+    $err = $result["err"] ?? null;
+    echo "Error: " . ($err ? $err->getMessage() : "HTTP " . $result["status"]);
 }
 ```
 
@@ -104,8 +140,8 @@ $client = FreepublicapisSDK::test([
     "entity" => ["api" => ["test01" => ["id" => "test01"]]],
 ]);
 
-// load() returns the bare mock record (throws on error).
-$api = $client->Api()->load(["id" => "test01"]);
+// Entity ops return the bare mock record (throws on error).
+$api = $client->Api()->list();
 print_r($api);
 ```
 
@@ -194,10 +230,7 @@ All entities share the same interface.
 | Method | Signature | Description |
 | --- | --- | --- |
 | `load` | `($reqmatch, $ctrl): array` | Load a single entity by match criteria. |
-| `list` | `($reqmatch, $ctrl): array` | List entities matching the criteria. |
-| `create` | `($reqdata, $ctrl): array` | Create a new entity. |
-| `update` | `($reqdata, $ctrl): array` | Update an existing entity. |
-| `remove` | `($reqmatch, $ctrl): array` | Remove an entity. |
+| `list` | `(?array $reqmatch = null, $ctrl): array` | List entities matching the criteria (call with no argument to list all). |
 | `data_get` | `(): array` | Get entity data. |
 | `data_set` | `($data): void` | Set entity data. |
 | `match_get` | `(): array` | Get entity match criteria. |
@@ -271,23 +304,23 @@ Create an instance: `$api = $client->Api();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `auth` | ``$STRING`` |  |
-| `avg_response_time` | ``$INTEGER`` |  |
-| `cor` | ``$BOOLEAN`` |  |
-| `created_at` | ``$STRING`` |  |
-| `description` | ``$STRING`` |  |
-| `documentation_url` | ``$STRING`` |  |
-| `endpoint` | ``$ARRAY`` |  |
-| `error_rate` | ``$NUMBER`` |  |
-| `http` | ``$BOOLEAN`` |  |
-| `id` | ``$INTEGER`` |  |
-| `last_checked` | ``$STRING`` |  |
-| `method` | ``$STRING`` |  |
-| `path` | ``$STRING`` |  |
-| `reliability` | ``$NUMBER`` |  |
-| `tag` | ``$ARRAY`` |  |
-| `title` | ``$STRING`` |  |
-| `url` | ``$STRING`` |  |
+| `auth` | `string` |  |
+| `avg_response_time` | `int` |  |
+| `cor` | `bool` |  |
+| `created_at` | `string` |  |
+| `description` | `string` |  |
+| `documentation_url` | `string` |  |
+| `endpoint` | `array` |  |
+| `error_rate` | `float` |  |
+| `http` | `bool` |  |
+| `id` | `int` |  |
+| `last_checked` | `string` |  |
+| `method` | `string` |  |
+| `path` | `string` |  |
+| `reliability` | `float` |  |
+| `tag` | `array` |  |
+| `title` | `string` |  |
+| `url` | `string` |  |
 
 #### Example: Load
 
@@ -304,12 +337,16 @@ $apis = $client->Api()->list();
 ```
 
 
-## Explanation
+## Advanced
+
+> The sections above cover everyday use. The material below explains the
+> SDK's internals — useful when extending it with custom features, but not
+> needed for normal use.
 
 ### The operation pipeline
 
-Every entity operation (load, list, create, update, remove) follows a
-six-stage pipeline. Each stage fires a feature hook before executing:
+Every entity operation follows a six-stage pipeline. Each stage fires a
+feature hook before executing:
 
 ```
 PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
@@ -326,8 +363,9 @@ PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
 - **PreDone**: Final stage before returning to the caller. Entity
   state (match, data) is updated here.
 
-If any stage returns an error, the pipeline short-circuits and the
-error is returned to the caller as the second element in the return array.
+If any stage errors, the pipeline short-circuits and the error surfaces
+to the caller — see [Error handling](#error-handling) for how that looks
+in this language.
 
 ### Features and hooks
 
@@ -371,15 +409,15 @@ when needed.
 
 ### Entity state
 
-Entity instances are stateful. After a successful `load`, the entity
+Entity instances are stateful. After a successful `list`, the entity
 stores the returned data and match criteria internally.
 
 ```php
 $api = $client->Api();
-$api->load(["id" => "example_id"]);
+$api->list();
 
-// $api->dataGet() now returns the loaded api data
-// $api->matchGet() returns the last match criteria
+// $api->data_get() now returns the api data from the last list
+// $api->match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

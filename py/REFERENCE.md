@@ -87,32 +87,32 @@ api = client.Api()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `auth` | ``$STRING`` | No |  |
-| `avg_response_time` | ``$INTEGER`` | No |  |
-| `cor` | ``$BOOLEAN`` | No |  |
-| `created_at` | ``$STRING`` | No |  |
-| `description` | ``$STRING`` | No |  |
-| `documentation_url` | ``$STRING`` | No |  |
-| `endpoint` | ``$ARRAY`` | No |  |
-| `error_rate` | ``$NUMBER`` | No |  |
-| `http` | ``$BOOLEAN`` | No |  |
-| `id` | ``$INTEGER`` | No |  |
-| `last_checked` | ``$STRING`` | No |  |
-| `method` | ``$STRING`` | No |  |
-| `path` | ``$STRING`` | No |  |
-| `reliability` | ``$NUMBER`` | No |  |
-| `tag` | ``$ARRAY`` | No |  |
-| `title` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `auth` | `str` | No |  |
+| `avg_response_time` | `int` | No |  |
+| `cor` | `bool` | No |  |
+| `created_at` | `str` | No |  |
+| `description` | `str` | No |  |
+| `documentation_url` | `str` | No |  |
+| `endpoint` | `list` | No |  |
+| `error_rate` | `float` | No |  |
+| `http` | `bool` | No |  |
+| `id` | `int` | No |  |
+| `last_checked` | `str` | No |  |
+| `method` | `str` | No |  |
+| `path` | `str` | No |  |
+| `reliability` | `float` | No |  |
+| `tag` | `list` | No |  |
+| `title` | `str` | No |  |
+| `url` | `str` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Api().list({})
+results = client.Api().list()
 for api in results:
     print(api)
 ```

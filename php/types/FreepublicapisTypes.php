@@ -40,7 +40,7 @@ class ApiLoadMatch
     public int $id;
 }
 
-/** Match filter for Api#list (any subset of Api fields). */
+/** Request payload for Api#list. */
 class ApiListMatch
 {
     public ?string $auth = null;

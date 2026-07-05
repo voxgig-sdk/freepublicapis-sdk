@@ -8,7 +8,7 @@ Complete API reference for the Freepublicapis Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'freepublicapis_sdk'
+require_relative 'Freepublicapis_sdk'
 
 client = FreepublicapisSDK.new(options)
 ```
@@ -93,32 +93,32 @@ api = client.Api
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `auth` | ``$STRING`` | No |  |
-| `avg_response_time` | ``$INTEGER`` | No |  |
-| `cor` | ``$BOOLEAN`` | No |  |
-| `created_at` | ``$STRING`` | No |  |
-| `description` | ``$STRING`` | No |  |
-| `documentation_url` | ``$STRING`` | No |  |
-| `endpoint` | ``$ARRAY`` | No |  |
-| `error_rate` | ``$NUMBER`` | No |  |
-| `http` | ``$BOOLEAN`` | No |  |
-| `id` | ``$INTEGER`` | No |  |
-| `last_checked` | ``$STRING`` | No |  |
-| `method` | ``$STRING`` | No |  |
-| `path` | ``$STRING`` | No |  |
-| `reliability` | ``$NUMBER`` | No |  |
-| `tag` | ``$ARRAY`` | No |  |
-| `title` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `auth` | `String` | No |  |
+| `avg_response_time` | `Integer` | No |  |
+| `cor` | `Boolean` | No |  |
+| `created_at` | `String` | No |  |
+| `description` | `String` | No |  |
+| `documentation_url` | `String` | No |  |
+| `endpoint` | `Array` | No |  |
+| `error_rate` | `Float` | No |  |
+| `http` | `Boolean` | No |  |
+| `id` | `Integer` | No |  |
+| `last_checked` | `String` | No |  |
+| `method` | `String` | No |  |
+| `path` | `String` | No |  |
+| `reliability` | `Float` | No |  |
+| `tag` | `Array` | No |  |
+| `title` | `String` | No |  |
+| `url` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Api.list(nil)
+results = client.Api.list
 ```
 
 #### `load(reqmatch, ctrl = nil) -> result`
