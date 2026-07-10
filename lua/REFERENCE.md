@@ -123,7 +123,7 @@ local results, err = client:Api():list()
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Api():load({ id = "api_id" })
+local result, err = client:Api():load({ id = 1 })
 ```
 
 ### Common Methods

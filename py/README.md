@@ -56,7 +56,7 @@ except Exception as err:
 
 ```python
 try:
-    api = client.Api().load({"id": "example_id"})
+    api = client.Api().load({"id": 1})
     print(api)
 except Exception as err:
     print(f"load failed: {err}")
@@ -318,7 +318,7 @@ Create an instance: `api = client.Api()`
 #### Example: Load
 
 ```python
-api = client.Api().load({"id": "api_id"})
+api = client.Api().load({"id": 1})
 ```
 
 #### Example: List

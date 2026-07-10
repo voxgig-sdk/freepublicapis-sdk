@@ -332,7 +332,7 @@ Create an instance: `api := client.Api(nil)`
 #### Example: Load
 
 ```go
-api, err := client.Api(nil).Load(map[string]any{"id": "api_id"}, nil)
+api, err := client.Api(nil).Load(map[string]any{"id": 1}, nil)
 if err != nil {
     panic(err)
 }

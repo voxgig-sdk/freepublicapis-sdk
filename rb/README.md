@@ -49,7 +49,7 @@ end
 ```ruby
 begin
   # load returns the bare Api record (raises on error).
-  api = client.Api.load({ "id" => "example_id" })
+  api = client.Api.load({ "id" => 1 })
   puts api
 rescue => err
   warn "load failed: #{err}"
@@ -316,7 +316,7 @@ Create an instance: `api = client.Api`
 
 ```ruby
 # load returns the bare Api record (raises on error).
-api = client.Api.load({ "id" => "api_id" })
+api = client.Api.load({ "id" => 1 })
 ```
 
 #### Example: List

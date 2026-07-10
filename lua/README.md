@@ -50,7 +50,7 @@ end
 ### 3. Load an api
 
 ```lua
-local api, err = client:Api():load({ id = "example_id" })
+local api, err = client:Api():load({ id = 1 })
 if err then error(err) end
 print(api)
 ```
@@ -304,7 +304,7 @@ Create an instance: `local api = client:Api(nil)`
 #### Example: Load
 
 ```lua
-local api, err = client:Api():load({ id = "api_id" })
+local api, err = client:Api():load({ id = 1 })
 ```
 
 #### Example: List

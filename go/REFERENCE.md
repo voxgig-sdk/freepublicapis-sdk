@@ -91,6 +91,7 @@ same parameters as `Direct()`.
 
 ```go
 api := client.Api(nil)
+fmt.Println(api.GetName()) // "api"
 ```
 
 ### Fields
@@ -123,6 +124,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.Api(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 #### `Load(reqmatch, ctrl map[string]any) (any, error)`
@@ -130,7 +135,11 @@ results, err := client.Api(nil).List(nil, nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.Api(nil).Load(map[string]any{"id": "api_id"}, nil)
+result, err := client.Api(nil).Load(map[string]any{"id": 1}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods

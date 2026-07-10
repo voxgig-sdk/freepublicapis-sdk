@@ -125,7 +125,7 @@ $results = $client->Api()->list();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->Api()->load(["id" => "api_id"]);
+$result = $client->Api()->load(["id" => 1]);
 ```
 
 ### Common Methods

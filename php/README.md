@@ -50,7 +50,7 @@ try {
 ```php
 try {
     // load() returns the bare Api record (throws on error).
-    $api = $client->Api()->load(["id" => "example_id"]);
+    $api = $client->Api()->load(["id" => 1]);
     print_r($api);
 } catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
@@ -326,7 +326,7 @@ Create an instance: `$api = $client->Api();`
 
 ```php
 // load() returns the bare Api record (throws on error).
-$api = $client->Api()->load(["id" => "api_id"]);
+$api = $client->Api()->load(["id" => 1]);
 ```
 
 #### Example: List
