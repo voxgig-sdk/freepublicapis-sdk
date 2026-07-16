@@ -29,7 +29,7 @@ class Config {
 
 
   options = {
-    base: '$$main.kit.info.servers.0.url$$',
+    base: 'https://www.freepublicapis.com',
 
     'AUTHBLOCK'headers: 'HEADERS',
 
