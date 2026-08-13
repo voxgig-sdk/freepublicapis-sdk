@@ -99,20 +99,20 @@ fmt.Println(api.GetName()) // "api"
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `auth` | `string` | No |  |
-| `avg_response_time` | `int` | No |  |
-| `cor` | `bool` | No |  |
-| `created_at` | `string` | No |  |
+| `avgResponseTime` | `int` | No |  |
+| `cors` | `bool` | No |  |
+| `createdAt` | `string` | No |  |
 | `description` | `string` | No |  |
-| `documentation_url` | `string` | No |  |
-| `endpoint` | `[]any` | No |  |
-| `error_rate` | `float64` | No |  |
-| `http` | `bool` | No |  |
+| `documentationUrl` | `string` | No |  |
+| `endpoints` | `[]any` | No |  |
+| `errorRate` | `float64` | No |  |
+| `https` | `bool` | No |  |
 | `id` | `int` | No |  |
-| `last_checked` | `string` | No |  |
+| `lastChecked` | `string` | No |  |
 | `method` | `string` | No |  |
 | `path` | `string` | No |  |
 | `reliability` | `float64` | No |  |
-| `tag` | `[]any` | No |  |
+| `tags` | `[]any` | No |  |
 | `title` | `string` | No |  |
 | `url` | `string` | No |  |
 

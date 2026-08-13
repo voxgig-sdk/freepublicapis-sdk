@@ -8,20 +8,20 @@
 
 ---@class Api
 ---@field auth? string
----@field avg_response_time? number
----@field cor? boolean
----@field created_at? string
+---@field avgResponseTime? number
+---@field cors? boolean
+---@field createdAt? string
 ---@field description? string
----@field documentation_url? string
----@field endpoint? table
----@field error_rate? number
----@field http? boolean
+---@field documentationUrl? string
+---@field endpoints? table
+---@field errorRate? number
+---@field https? boolean
 ---@field id? number
----@field last_checked? string
+---@field lastChecked? string
 ---@field method? string
 ---@field path? string
 ---@field reliability? number
----@field tag? table
+---@field tags? table
 ---@field title? string
 ---@field url? string
 
@@ -30,20 +30,20 @@
 
 ---@class ApiListMatch
 ---@field auth? string
----@field avg_response_time? number
----@field cor? boolean
----@field created_at? string
+---@field avgResponseTime? number
+---@field cors? boolean
+---@field createdAt? string
 ---@field description? string
----@field documentation_url? string
----@field endpoint? table
----@field error_rate? number
----@field http? boolean
+---@field documentationUrl? string
+---@field endpoints? table
+---@field errorRate? number
+---@field https? boolean
 ---@field id? number
----@field last_checked? string
+---@field lastChecked? string
 ---@field method? string
 ---@field path? string
 ---@field reliability? number
----@field tag? table
+---@field tags? table
 ---@field title? string
 ---@field url? string
 

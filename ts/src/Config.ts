@@ -21,7 +21,7 @@ class Config {
 
 
   main = {
-    name: 'ProjectName',
+    name: 'Freepublicapis',
   }
 
 
@@ -63,21 +63,21 @@ class Config {
         },
         {
           "active": true,
-          "name": "avg_response_time",
+          "name": "avgResponseTime",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "cor",
+          "name": "cors",
           "req": false,
           "type": "`$BOOLEAN`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "created_at",
+          "name": "createdAt",
           "req": false,
           "type": "`$STRING`",
           "index$": 3
@@ -91,28 +91,28 @@ class Config {
         },
         {
           "active": true,
-          "name": "documentation_url",
+          "name": "documentationUrl",
           "req": false,
           "type": "`$STRING`",
           "index$": 5
         },
         {
           "active": true,
-          "name": "endpoint",
+          "name": "endpoints",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 6
         },
         {
           "active": true,
-          "name": "error_rate",
+          "name": "errorRate",
           "req": false,
           "type": "`$NUMBER`",
           "index$": 7
         },
         {
           "active": true,
-          "name": "http",
+          "name": "https",
           "req": false,
           "type": "`$BOOLEAN`",
           "index$": 8
@@ -126,7 +126,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "last_checked",
+          "name": "lastChecked",
           "req": false,
           "type": "`$STRING`",
           "index$": 10
@@ -154,7 +154,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "tag",
+          "name": "tags",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 14
@@ -213,6 +213,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/api/apis",
               "parts": [
@@ -228,13 +229,14 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 0
             },
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/api/random",
               "parts": [
@@ -273,6 +275,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/api/apis/{id}",
               "parts": [

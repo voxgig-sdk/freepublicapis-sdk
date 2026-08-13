@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ FreepublicapisUtility.registrar = ->(u) {
   u.prepare_params = FreepublicapisUtilities::PrepareParams
   u.prepare_path = FreepublicapisUtilities::PreparePath
   u.prepare_query = FreepublicapisUtilities::PrepareQuery
+  u.graphql_body = FreepublicapisUtilities::GraphqlBody
+  u.graphql_errors = FreepublicapisUtilities::GraphqlErrors
   u.result_basic = FreepublicapisUtilities::ResultBasic
   u.result_body = FreepublicapisUtilities::ResultBody
   u.result_headers = FreepublicapisUtilities::ResultHeaders

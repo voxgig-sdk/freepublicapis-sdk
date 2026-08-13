@@ -7,20 +7,20 @@
 
 export interface Api {
   auth?: string
-  avg_response_time?: number
-  cor?: boolean
-  created_at?: string
+  avgResponseTime?: number
+  cors?: boolean
+  createdAt?: string
   description?: string
-  documentation_url?: string
-  endpoint?: any[]
-  error_rate?: number
-  http?: boolean
+  documentationUrl?: string
+  endpoints?: any[]
+  errorRate?: number
+  https?: boolean
   id?: number
-  last_checked?: string
+  lastChecked?: string
   method?: string
   path?: string
   reliability?: number
-  tag?: any[]
+  tags?: any[]
   title?: string
   url?: string
 }
@@ -31,21 +31,27 @@ export interface ApiLoadMatch {
 
 export interface ApiListMatch {
   auth?: string
-  avg_response_time?: number
-  cor?: boolean
-  created_at?: string
+  avgResponseTime?: number
+  cors?: boolean
+  createdAt?: string
   description?: string
-  documentation_url?: string
-  endpoint?: any[]
-  error_rate?: number
-  http?: boolean
+  documentationUrl?: string
+  endpoints?: any[]
+  errorRate?: number
+  https?: boolean
   id?: number
-  last_checked?: string
+  lastChecked?: string
   method?: string
   path?: string
   reliability?: number
-  tag?: any[]
+  tags?: any[]
   title?: string
   url?: string
+
+  // Selects a custom action instead of the plain list:
+  //   'random'
+  // The remaining keys are that action's own payload.
+  $action?: string
+  [action: string]: any
 }
 

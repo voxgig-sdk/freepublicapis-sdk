@@ -35,7 +35,9 @@ const client = new FreepublicapisSDK()
 
 ### 2. List api records
 
-`list()` resolves to an array of Api objects — iterate it directly:
+`list()` resolves to an array of Api ENTITIES — every operation
+resolves to entities, not raw records. Iterate them directly, and call
+`.data()` on one for the record it holds:
 
 ```ts
 const apis = await client.Api().list()
@@ -133,7 +135,8 @@ Create a mock client for unit testing — no server required:
 const client = FreepublicapisSDK.test()
 
 const api = await client.Api().list()
-// api is a bare entity populated with mock response data
+// api is the entity, populated with mock response data
+// — call api.data() for the record itself
 console.log(api)
 ```
 
@@ -300,20 +303,20 @@ The `prepare()` method returns:
 | Field | Description |
 | --- | --- |
 | `auth` |  |
-| `avg_response_time` |  |
-| `cor` |  |
-| `created_at` |  |
+| `avgResponseTime` |  |
+| `cors` |  |
+| `createdAt` |  |
 | `description` |  |
-| `documentation_url` |  |
-| `endpoint` |  |
-| `error_rate` |  |
-| `http` |  |
+| `documentationUrl` |  |
+| `endpoints` |  |
+| `errorRate` |  |
+| `https` |  |
 | `id` |  |
-| `last_checked` |  |
+| `lastChecked` |  |
 | `method` |  |
 | `path` |  |
 | `reliability` |  |
-| `tag` |  |
+| `tags` |  |
 | `title` |  |
 | `url` |  |
 
@@ -342,20 +345,20 @@ Create an instance: `const api = client.Api()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `auth` | `string` |  |
-| `avg_response_time` | `number` |  |
-| `cor` | `boolean` |  |
-| `created_at` | `string` |  |
+| `avgResponseTime` | `number` |  |
+| `cors` | `boolean` |  |
+| `createdAt` | `string` |  |
 | `description` | `string` |  |
-| `documentation_url` | `string` |  |
-| `endpoint` | `any[]` |  |
-| `error_rate` | `number` |  |
-| `http` | `boolean` |  |
+| `documentationUrl` | `string` |  |
+| `endpoints` | `any[]` |  |
+| `errorRate` | `number` |  |
+| `https` | `boolean` |  |
 | `id` | `number` |  |
-| `last_checked` | `string` |  |
+| `lastChecked` | `string` |  |
 | `method` | `string` |  |
 | `path` | `string` |  |
 | `reliability` | `number` |  |
-| `tag` | `any[]` |  |
+| `tags` | `any[]` |  |
 | `title` | `string` |  |
 | `url` | `string` |  |
 

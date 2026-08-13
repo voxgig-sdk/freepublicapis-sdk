@@ -242,20 +242,20 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 | Field | Description |
 | --- | --- |
 | `auth` |  |
-| `avg_response_time` |  |
-| `cor` |  |
-| `created_at` |  |
+| `avgResponseTime` |  |
+| `cors` |  |
+| `createdAt` |  |
 | `description` |  |
-| `documentation_url` |  |
-| `endpoint` |  |
-| `error_rate` |  |
-| `http` |  |
+| `documentationUrl` |  |
+| `endpoints` |  |
+| `errorRate` |  |
+| `https` |  |
 | `id` |  |
-| `last_checked` |  |
+| `lastChecked` |  |
 | `method` |  |
 | `path` |  |
 | `reliability` |  |
-| `tag` |  |
+| `tags` |  |
 | `title` |  |
 | `url` |  |
 
@@ -284,20 +284,20 @@ Create an instance: `local api = client:Api(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `auth` | `string` |  |
-| `avg_response_time` | `number` |  |
-| `cor` | `boolean` |  |
-| `created_at` | `string` |  |
+| `avgResponseTime` | `number` |  |
+| `cors` | `boolean` |  |
+| `createdAt` | `string` |  |
 | `description` | `string` |  |
-| `documentation_url` | `string` |  |
-| `endpoint` | `table` |  |
-| `error_rate` | `number` |  |
-| `http` | `boolean` |  |
+| `documentationUrl` | `string` |  |
+| `endpoints` | `table` |  |
+| `errorRate` | `number` |  |
+| `https` | `boolean` |  |
 | `id` | `number` |  |
-| `last_checked` | `string` |  |
+| `lastChecked` | `string` |  |
 | `method` | `string` |  |
 | `path` | `string` |  |
 | `reliability` | `number` |  |
-| `tag` | `table` |  |
+| `tags` | `table` |  |
 | `title` | `string` |  |
 | `url` | `string` |  |
 

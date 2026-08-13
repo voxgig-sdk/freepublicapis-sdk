@@ -94,20 +94,20 @@ api = client.Api
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `auth` | `String` | No |  |
-| `avg_response_time` | `Integer` | No |  |
-| `cor` | `Boolean` | No |  |
-| `created_at` | `String` | No |  |
+| `avgResponseTime` | `Integer` | No |  |
+| `cors` | `Boolean` | No |  |
+| `createdAt` | `String` | No |  |
 | `description` | `String` | No |  |
-| `documentation_url` | `String` | No |  |
-| `endpoint` | `Array` | No |  |
-| `error_rate` | `Float` | No |  |
-| `http` | `Boolean` | No |  |
+| `documentationUrl` | `String` | No |  |
+| `endpoints` | `Array` | No |  |
+| `errorRate` | `Float` | No |  |
+| `https` | `Boolean` | No |  |
 | `id` | `Integer` | No |  |
-| `last_checked` | `String` | No |  |
+| `lastChecked` | `String` | No |  |
 | `method` | `String` | No |  |
 | `path` | `String` | No |  |
 | `reliability` | `Float` | No |  |
-| `tag` | `Array` | No |  |
+| `tags` | `Array` | No |  |
 | `title` | `String` | No |  |
 | `url` | `String` | No |  |
 

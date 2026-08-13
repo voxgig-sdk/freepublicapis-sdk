@@ -93,20 +93,20 @@ $api = $client->Api();
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `auth` | `string` | No |  |
-| `avg_response_time` | `int` | No |  |
-| `cor` | `bool` | No |  |
-| `created_at` | `string` | No |  |
+| `avgResponseTime` | `int` | No |  |
+| `cors` | `bool` | No |  |
+| `createdAt` | `string` | No |  |
 | `description` | `string` | No |  |
-| `documentation_url` | `string` | No |  |
-| `endpoint` | `array` | No |  |
-| `error_rate` | `float` | No |  |
-| `http` | `bool` | No |  |
+| `documentationUrl` | `string` | No |  |
+| `endpoints` | `array` | No |  |
+| `errorRate` | `float` | No |  |
+| `https` | `bool` | No |  |
 | `id` | `int` | No |  |
-| `last_checked` | `string` | No |  |
+| `lastChecked` | `string` | No |  |
 | `method` | `string` | No |  |
 | `path` | `string` | No |  |
 | `reliability` | `float` | No |  |
-| `tag` | `array` | No |  |
+| `tags` | `array` | No |  |
 | `title` | `string` | No |  |
 | `url` | `string` | No |  |
 

@@ -15,9 +15,12 @@ main: {
           url: "https://www.freepublicapis.com"
         }
       ]
+      summary: "FreePublicAPIs now has a free public API!"
       termsOfService: "https://www.freepublicapis.com/tos"
       title: "Free Public APIs API"
       version: "1.0.0"
+      website: "https://www.freepublicapis.com/api"
     }
   }
 }
+

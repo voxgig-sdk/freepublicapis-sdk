@@ -49,7 +49,7 @@ try {
 
 ```php
 try {
-    // load() returns the bare Api record (throws on error).
+    // load() returns the ENTITY — call data_get() for the Api record (throws on error).
     $api = $client->Api()->load(["id" => 1]);
     print_r($api);
 } catch (\Throwable $err) {
@@ -140,7 +140,8 @@ $client = FreepublicapisSDK::test([
     "entity" => ["api" => ["test01" => ["id" => "test01"]]],
 ]);
 
-// Entity ops return the bare mock record (throws on error).
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
 $api = $client->Api()->list();
 print_r($api);
 ```
@@ -240,7 +241,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -263,20 +264,20 @@ On error, `ok` is `false` and `$err` contains the error value.
 | Field | Description |
 | --- | --- |
 | `auth` |  |
-| `avg_response_time` |  |
-| `cor` |  |
-| `created_at` |  |
+| `avgResponseTime` |  |
+| `cors` |  |
+| `createdAt` |  |
 | `description` |  |
-| `documentation_url` |  |
-| `endpoint` |  |
-| `error_rate` |  |
-| `http` |  |
+| `documentationUrl` |  |
+| `endpoints` |  |
+| `errorRate` |  |
+| `https` |  |
 | `id` |  |
-| `last_checked` |  |
+| `lastChecked` |  |
 | `method` |  |
 | `path` |  |
 | `reliability` |  |
-| `tag` |  |
+| `tags` |  |
 | `title` |  |
 | `url` |  |
 
@@ -305,27 +306,27 @@ Create an instance: `$api = $client->Api();`
 | Field | Type | Description |
 | --- | --- | --- |
 | `auth` | `string` |  |
-| `avg_response_time` | `int` |  |
-| `cor` | `bool` |  |
-| `created_at` | `string` |  |
+| `avgResponseTime` | `int` |  |
+| `cors` | `bool` |  |
+| `createdAt` | `string` |  |
 | `description` | `string` |  |
-| `documentation_url` | `string` |  |
-| `endpoint` | `array` |  |
-| `error_rate` | `float` |  |
-| `http` | `bool` |  |
+| `documentationUrl` | `string` |  |
+| `endpoints` | `array` |  |
+| `errorRate` | `float` |  |
+| `https` | `bool` |  |
 | `id` | `int` |  |
-| `last_checked` | `string` |  |
+| `lastChecked` | `string` |  |
 | `method` | `string` |  |
 | `path` | `string` |  |
 | `reliability` | `float` |  |
-| `tag` | `array` |  |
+| `tags` | `array` |  |
 | `title` | `string` |  |
 | `url` | `string` |  |
 
 #### Example: Load
 
 ```php
-// load() returns the bare Api record (throws on error).
+// load() returns the ENTITY — call data_get() for the Api record (throws on error).
 $api = $client->Api()->load(["id" => 1]);
 ```
 

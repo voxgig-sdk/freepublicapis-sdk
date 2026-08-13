@@ -16,20 +16,20 @@ declare(strict_types=1);
 class Api
 {
     public ?string $auth = null;
-    public ?int $avg_response_time = null;
-    public ?bool $cor = null;
-    public ?string $created_at = null;
+    public ?int $avgResponseTime = null;
+    public ?bool $cors = null;
+    public ?string $createdAt = null;
     public ?string $description = null;
-    public ?string $documentation_url = null;
-    public ?array $endpoint = null;
-    public ?float $error_rate = null;
-    public ?bool $http = null;
+    public ?string $documentationUrl = null;
+    public ?array $endpoints = null;
+    public ?float $errorRate = null;
+    public ?bool $https = null;
     public ?int $id = null;
-    public ?string $last_checked = null;
+    public ?string $lastChecked = null;
     public ?string $method = null;
     public ?string $path = null;
     public ?float $reliability = null;
-    public ?array $tag = null;
+    public ?array $tags = null;
     public ?string $title = null;
     public ?string $url = null;
 }
@@ -44,20 +44,20 @@ class ApiLoadMatch
 class ApiListMatch
 {
     public ?string $auth = null;
-    public ?int $avg_response_time = null;
-    public ?bool $cor = null;
-    public ?string $created_at = null;
+    public ?int $avgResponseTime = null;
+    public ?bool $cors = null;
+    public ?string $createdAt = null;
     public ?string $description = null;
-    public ?string $documentation_url = null;
-    public ?array $endpoint = null;
-    public ?float $error_rate = null;
-    public ?bool $http = null;
+    public ?string $documentationUrl = null;
+    public ?array $endpoints = null;
+    public ?float $errorRate = null;
+    public ?bool $https = null;
     public ?int $id = null;
-    public ?string $last_checked = null;
+    public ?string $lastChecked = null;
     public ?string $method = null;
     public ?string $path = null;
     public ?float $reliability = null;
-    public ?array $tag = null;
+    public ?array $tags = null;
     public ?string $title = null;
     public ?string $url = null;
 }

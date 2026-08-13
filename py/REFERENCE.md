@@ -88,20 +88,20 @@ api = client.Api()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `auth` | `str` | No |  |
-| `avg_response_time` | `int` | No |  |
-| `cor` | `bool` | No |  |
-| `created_at` | `str` | No |  |
+| `avgResponseTime` | `int` | No |  |
+| `cors` | `bool` | No |  |
+| `createdAt` | `str` | No |  |
 | `description` | `str` | No |  |
-| `documentation_url` | `str` | No |  |
-| `endpoint` | `list` | No |  |
-| `error_rate` | `float` | No |  |
-| `http` | `bool` | No |  |
+| `documentationUrl` | `str` | No |  |
+| `endpoints` | `list` | No |  |
+| `errorRate` | `float` | No |  |
+| `https` | `bool` | No |  |
 | `id` | `int` | No |  |
-| `last_checked` | `str` | No |  |
+| `lastChecked` | `str` | No |  |
 | `method` | `str` | No |  |
 | `path` | `str` | No |  |
 | `reliability` | `float` | No |  |
-| `tag` | `list` | No |  |
+| `tags` | `list` | No |  |
 | `title` | `str` | No |  |
 | `url` | `str` | No |  |
 

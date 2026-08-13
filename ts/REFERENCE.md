@@ -117,22 +117,42 @@ const api = client.Api()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `auth` | `string` | No |  |
-| `avg_response_time` | `number` | No |  |
-| `cor` | `boolean` | No |  |
-| `created_at` | `string` | No |  |
+| `avgResponseTime` | `number` | No |  |
+| `cors` | `boolean` | No |  |
+| `createdAt` | `string` | No |  |
 | `description` | `string` | No |  |
-| `documentation_url` | `string` | No |  |
-| `endpoint` | `any[]` | No |  |
-| `error_rate` | `number` | No |  |
-| `http` | `boolean` | No |  |
+| `documentationUrl` | `string` | No |  |
+| `endpoints` | `any[]` | No |  |
+| `errorRate` | `number` | No |  |
+| `https` | `boolean` | No |  |
 | `id` | `number` | No |  |
-| `last_checked` | `string` | No |  |
+| `lastChecked` | `string` | No |  |
 | `method` | `string` | No |  |
 | `path` | `string` | No |  |
 | `reliability` | `number` | No |  |
-| `tag` | `any[]` | No |  |
+| `tags` | `any[]` | No |  |
 | `title` | `string` | No |  |
 | `url` | `string` | No |  |
+
+### Actions
+
+This entity exposes custom API actions in addition to the standard
+operations. Select one with `$action` in the call's argument; the
+remaining keys are sent as that action's payload.
+
+| Action | Route | Call |
+| --- | --- | --- |
+| `random` | `/api/random` | `client.Api().list({ $action: 'random', ... })` |
+
+An action returns that action's OWN response, which is not necessarily a
+Api record — check the API definition for its shape.
+
+```ts
+const result = await client.Api().list({
+  $action: 'random',
+  /* ...the action's own arguments */
+})
+```
 
 ### Operations
 

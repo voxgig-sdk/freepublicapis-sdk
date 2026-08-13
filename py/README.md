@@ -52,7 +52,7 @@ except Exception as err:
 
 ### 3. Load an api
 
-`load()` returns the bare record (a `dict`) and raises on error.
+`load()` returns the ENTITY — call data_get() for the record — and raises on error.
 
 ```python
 try:
@@ -136,7 +136,8 @@ Create a mock client for unit testing — no server required:
 ```python
 client = FreepublicapisSDK.test()
 
-# Entity ops return the bare record and raise on error.
+# Entity ops return the ENTITY and raises on error;
+# call data_get() for the record.
 api = client.Api().list()
 # api contains the mock response record
 ```
@@ -233,7 +234,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (a `dict` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (a `dict` for single-entity
 ops, a `list` for `list`) and raise on error. Wrap calls in
 `try`/`except` to handle failures.
 
@@ -256,20 +257,20 @@ On error, `ok` is `False` and `err` contains the error value.
 | Field | Description |
 | --- | --- |
 | `auth` |  |
-| `avg_response_time` |  |
-| `cor` |  |
-| `created_at` |  |
+| `avgResponseTime` |  |
+| `cors` |  |
+| `createdAt` |  |
 | `description` |  |
-| `documentation_url` |  |
-| `endpoint` |  |
-| `error_rate` |  |
-| `http` |  |
+| `documentationUrl` |  |
+| `endpoints` |  |
+| `errorRate` |  |
+| `https` |  |
 | `id` |  |
-| `last_checked` |  |
+| `lastChecked` |  |
 | `method` |  |
 | `path` |  |
 | `reliability` |  |
-| `tag` |  |
+| `tags` |  |
 | `title` |  |
 | `url` |  |
 
@@ -298,20 +299,20 @@ Create an instance: `api = client.Api()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `auth` | `str` |  |
-| `avg_response_time` | `int` |  |
-| `cor` | `bool` |  |
-| `created_at` | `str` |  |
+| `avgResponseTime` | `int` |  |
+| `cors` | `bool` |  |
+| `createdAt` | `str` |  |
 | `description` | `str` |  |
-| `documentation_url` | `str` |  |
-| `endpoint` | `list` |  |
-| `error_rate` | `float` |  |
-| `http` | `bool` |  |
+| `documentationUrl` | `str` |  |
+| `endpoints` | `list` |  |
+| `errorRate` | `float` |  |
+| `https` | `bool` |  |
 | `id` | `int` |  |
-| `last_checked` | `str` |  |
+| `lastChecked` | `str` |  |
 | `method` | `str` |  |
 | `path` | `str` |  |
 | `reliability` | `float` |  |
-| `tag` | `list` |  |
+| `tags` | `list` |  |
 | `title` | `str` |  |
 | `url` | `str` |  |
 

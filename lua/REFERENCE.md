@@ -91,20 +91,20 @@ local api = client:Api(nil)
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `auth` | `string` | No |  |
-| `avg_response_time` | `number` | No |  |
-| `cor` | `boolean` | No |  |
-| `created_at` | `string` | No |  |
+| `avgResponseTime` | `number` | No |  |
+| `cors` | `boolean` | No |  |
+| `createdAt` | `string` | No |  |
 | `description` | `string` | No |  |
-| `documentation_url` | `string` | No |  |
-| `endpoint` | `table` | No |  |
-| `error_rate` | `number` | No |  |
-| `http` | `boolean` | No |  |
+| `documentationUrl` | `string` | No |  |
+| `endpoints` | `table` | No |  |
+| `errorRate` | `number` | No |  |
+| `https` | `boolean` | No |  |
 | `id` | `number` | No |  |
-| `last_checked` | `string` | No |  |
+| `lastChecked` | `string` | No |  |
 | `method` | `string` | No |  |
 | `path` | `string` | No |  |
 | `reliability` | `number` | No |  |
-| `tag` | `table` | No |  |
+| `tags` | `table` | No |  |
 | `title` | `string` | No |  |
 | `url` | `string` | No |  |
 

@@ -13,34 +13,34 @@
 # @!attribute [rw] auth
 #   @return [String, nil]
 #
-# @!attribute [rw] avg_response_time
+# @!attribute [rw] avgResponseTime
 #   @return [Integer, nil]
 #
-# @!attribute [rw] cor
+# @!attribute [rw] cors
 #   @return [Boolean, nil]
 #
-# @!attribute [rw] created_at
+# @!attribute [rw] createdAt
 #   @return [String, nil]
 #
 # @!attribute [rw] description
 #   @return [String, nil]
 #
-# @!attribute [rw] documentation_url
+# @!attribute [rw] documentationUrl
 #   @return [String, nil]
 #
-# @!attribute [rw] endpoint
+# @!attribute [rw] endpoints
 #   @return [Array, nil]
 #
-# @!attribute [rw] error_rate
+# @!attribute [rw] errorRate
 #   @return [Float, nil]
 #
-# @!attribute [rw] http
+# @!attribute [rw] https
 #   @return [Boolean, nil]
 #
 # @!attribute [rw] id
 #   @return [Integer, nil]
 #
-# @!attribute [rw] last_checked
+# @!attribute [rw] lastChecked
 #   @return [String, nil]
 #
 # @!attribute [rw] method
@@ -52,7 +52,7 @@
 # @!attribute [rw] reliability
 #   @return [Float, nil]
 #
-# @!attribute [rw] tag
+# @!attribute [rw] tags
 #   @return [Array, nil]
 #
 # @!attribute [rw] title
@@ -62,20 +62,20 @@
 #   @return [String, nil]
 Api = Struct.new(
   :auth,
-  :avg_response_time,
-  :cor,
-  :created_at,
+  :avgResponseTime,
+  :cors,
+  :createdAt,
   :description,
-  :documentation_url,
-  :endpoint,
-  :error_rate,
-  :http,
+  :documentationUrl,
+  :endpoints,
+  :errorRate,
+  :https,
   :id,
-  :last_checked,
+  :lastChecked,
   :method,
   :path,
   :reliability,
-  :tag,
+  :tags,
   :title,
   :url,
   keyword_init: true
@@ -95,34 +95,34 @@ ApiLoadMatch = Struct.new(
 # @!attribute [rw] auth
 #   @return [String, nil]
 #
-# @!attribute [rw] avg_response_time
+# @!attribute [rw] avgResponseTime
 #   @return [Integer, nil]
 #
-# @!attribute [rw] cor
+# @!attribute [rw] cors
 #   @return [Boolean, nil]
 #
-# @!attribute [rw] created_at
+# @!attribute [rw] createdAt
 #   @return [String, nil]
 #
 # @!attribute [rw] description
 #   @return [String, nil]
 #
-# @!attribute [rw] documentation_url
+# @!attribute [rw] documentationUrl
 #   @return [String, nil]
 #
-# @!attribute [rw] endpoint
+# @!attribute [rw] endpoints
 #   @return [Array, nil]
 #
-# @!attribute [rw] error_rate
+# @!attribute [rw] errorRate
 #   @return [Float, nil]
 #
-# @!attribute [rw] http
+# @!attribute [rw] https
 #   @return [Boolean, nil]
 #
 # @!attribute [rw] id
 #   @return [Integer, nil]
 #
-# @!attribute [rw] last_checked
+# @!attribute [rw] lastChecked
 #   @return [String, nil]
 #
 # @!attribute [rw] method
@@ -134,7 +134,7 @@ ApiLoadMatch = Struct.new(
 # @!attribute [rw] reliability
 #   @return [Float, nil]
 #
-# @!attribute [rw] tag
+# @!attribute [rw] tags
 #   @return [Array, nil]
 #
 # @!attribute [rw] title
@@ -144,20 +144,20 @@ ApiLoadMatch = Struct.new(
 #   @return [String, nil]
 ApiListMatch = Struct.new(
   :auth,
-  :avg_response_time,
-  :cor,
-  :created_at,
+  :avgResponseTime,
+  :cors,
+  :createdAt,
   :description,
-  :documentation_url,
-  :endpoint,
-  :error_rate,
-  :http,
+  :documentationUrl,
+  :endpoints,
+  :errorRate,
+  :https,
   :id,
-  :last_checked,
+  :lastChecked,
   :method,
   :path,
   :reliability,
-  :tag,
+  :tags,
   :title,
   :url,
   keyword_init: true

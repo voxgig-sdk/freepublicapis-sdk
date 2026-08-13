@@ -270,20 +270,20 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 | Field | Description |
 | --- | --- |
 | `"auth"` |  |
-| `"avg_response_time"` |  |
-| `"cor"` |  |
-| `"created_at"` |  |
+| `"avgResponseTime"` |  |
+| `"cors"` |  |
+| `"createdAt"` |  |
 | `"description"` |  |
-| `"documentation_url"` |  |
-| `"endpoint"` |  |
-| `"error_rate"` |  |
-| `"http"` |  |
+| `"documentationUrl"` |  |
+| `"endpoints"` |  |
+| `"errorRate"` |  |
+| `"https"` |  |
 | `"id"` |  |
-| `"last_checked"` |  |
+| `"lastChecked"` |  |
 | `"method"` |  |
 | `"path"` |  |
 | `"reliability"` |  |
-| `"tag"` |  |
+| `"tags"` |  |
 | `"title"` |  |
 | `"url"` |  |
 
@@ -312,20 +312,20 @@ Create an instance: `api := client.Api(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `auth` | `string` |  |
-| `avg_response_time` | `int` |  |
-| `cor` | `bool` |  |
-| `created_at` | `string` |  |
+| `avgResponseTime` | `int` |  |
+| `cors` | `bool` |  |
+| `createdAt` | `string` |  |
 | `description` | `string` |  |
-| `documentation_url` | `string` |  |
-| `endpoint` | `[]any` |  |
-| `error_rate` | `float64` |  |
-| `http` | `bool` |  |
+| `documentationUrl` | `string` |  |
+| `endpoints` | `[]any` |  |
+| `errorRate` | `float64` |  |
+| `https` | `bool` |  |
 | `id` | `int` |  |
-| `last_checked` | `string` |  |
+| `lastChecked` | `string` |  |
 | `method` | `string` |  |
 | `path` | `string` |  |
 | `reliability` | `float64` |  |
-| `tag` | `[]any` |  |
+| `tags` | `[]any` |  |
 | `title` | `string` |  |
 | `url` | `string` |  |
 

@@ -48,7 +48,7 @@ end
 
 ```ruby
 begin
-  # load returns the bare Api record (raises on error).
+  # load returns the ENTITY — call data_get for the Api record (raises on error).
   api = client.Api.load({ "id" => 1 })
   puts api
 rescue => err
@@ -134,7 +134,8 @@ client = FreepublicapisSDK.test({
   "entity" => { "api" => { "test01" => { "id" => "test01" } } },
 })
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 api = client.Api.list()
 puts api
 ```
@@ -253,20 +254,20 @@ returns a result `Hash` with these keys:
 | Field | Description |
 | --- | --- |
 | `auth` |  |
-| `avg_response_time` |  |
-| `cor` |  |
-| `created_at` |  |
+| `avgResponseTime` |  |
+| `cors` |  |
+| `createdAt` |  |
 | `description` |  |
-| `documentation_url` |  |
-| `endpoint` |  |
-| `error_rate` |  |
-| `http` |  |
+| `documentationUrl` |  |
+| `endpoints` |  |
+| `errorRate` |  |
+| `https` |  |
 | `id` |  |
-| `last_checked` |  |
+| `lastChecked` |  |
 | `method` |  |
 | `path` |  |
 | `reliability` |  |
-| `tag` |  |
+| `tags` |  |
 | `title` |  |
 | `url` |  |
 
@@ -295,27 +296,27 @@ Create an instance: `api = client.Api`
 | Field | Type | Description |
 | --- | --- | --- |
 | `auth` | `String` |  |
-| `avg_response_time` | `Integer` |  |
-| `cor` | `Boolean` |  |
-| `created_at` | `String` |  |
+| `avgResponseTime` | `Integer` |  |
+| `cors` | `Boolean` |  |
+| `createdAt` | `String` |  |
 | `description` | `String` |  |
-| `documentation_url` | `String` |  |
-| `endpoint` | `Array` |  |
-| `error_rate` | `Float` |  |
-| `http` | `Boolean` |  |
+| `documentationUrl` | `String` |  |
+| `endpoints` | `Array` |  |
+| `errorRate` | `Float` |  |
+| `https` | `Boolean` |  |
 | `id` | `Integer` |  |
-| `last_checked` | `String` |  |
+| `lastChecked` | `String` |  |
 | `method` | `String` |  |
 | `path` | `String` |  |
 | `reliability` | `Float` |  |
-| `tag` | `Array` |  |
+| `tags` | `Array` |  |
 | `title` | `String` |  |
 | `url` | `String` |  |
 
 #### Example: Load
 
 ```ruby
-# load returns the bare Api record (raises on error).
+# load returns the ENTITY — call data_get for the Api record (raises on error).
 api = client.Api.load({ "id" => 1 })
 ```
 
