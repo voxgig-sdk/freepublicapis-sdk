@@ -40,7 +40,7 @@ class FreepublicapisSDK
         $utility = new FreepublicapisUtility();
         $this->_utility = $utility;
 
-        $config = FreepublicapisConfig::make_config();
+        $config = FreepublicapisConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

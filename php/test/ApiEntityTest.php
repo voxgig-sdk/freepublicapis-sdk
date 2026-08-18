@@ -40,7 +40,7 @@ class ApiEntityTest extends TestCase
         $this->assertCount(3, $seen);
 
         // Inbound: streaming active -> yields each item from the feature.
-        $cfg = FreepublicapisConfig::make_config();
+        $cfg = FreepublicapisConfig::shared_config();
         if (isset($cfg["feature"]) && is_array($cfg["feature"]) && isset($cfg["feature"]["streaming"])) {
             $sdk = FreepublicapisSDK::test($seed, ["feature" => ["streaming" => ["active" => true]]]);
             $got = [];
