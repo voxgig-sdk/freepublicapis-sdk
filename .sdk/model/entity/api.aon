@@ -8,56 +8,67 @@ main: kit: entity: api: {
     {
       name: "auth"
       req: false
+      short: "Authentication method required"
       type: "`$STRING`"
     }
     {
       name: "avgResponseTime"
       req: false
+      short: "Average response time in milliseconds"
       type: "`$INTEGER`"
     }
     {
       name: "cors"
       req: false
+      short: "Whether CORS is enabled"
       type: "`$BOOLEAN`"
     }
     {
       name: "createdAt"
       req: false
+      short: "When the API was added to the directory"
       type: "`$STRING`"
     }
     {
       name: "description"
       req: false
+      short: "Description of what the API does"
       type: "`$STRING`"
     }
     {
       name: "documentationUrl"
       req: false
+      short: "URL to the API documentation"
       type: "`$STRING`"
     }
     {
       name: "endpoints"
       req: false
+      short: "Available endpoints for this API"
       type: "`$ARRAY`"
     }
     {
       name: "errorRate"
       req: false
+      short: "Error rate percentage"
       type: "`$NUMBER`"
     }
     {
       name: "https"
       req: false
+      short: "Whether the API supports HTTPS"
       type: "`$BOOLEAN`"
     }
     {
       name: "id"
       req: false
+      short: "Unique identifier for the API"
       type: "`$INTEGER`"
     }
     {
       name: "lastChecked"
       req: false
+      short: "When the API was last checked for availability"
       type: "`$STRING`"
     }
     {
@@ -73,21 +84,25 @@ main: kit: entity: api: {
     {
       name: "reliability"
       req: false
+      short: "Reliability percentage based on monitoring"
       type: "`$NUMBER`"
     }
     {
       name: "tags"
       req: false
+      short: "Categories/tags associated with the API"
       type: "`$ARRAY`"
     }
     {
       name: "title"
       req: false
+      short: "Name of the API"
       type: "`$STRING`"
     }
     {
       name: "url"
       req: false
+      short: "Base URL of the API"
       type: "`$STRING`"
     }
   ]

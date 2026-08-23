@@ -9,7 +9,7 @@ The API is exposed as capitalised, semantic **Entities** — e.g.
 instead of raw URL paths and query parameters. This keeps the surface
 predictable and low-friction for both humans and AI agents.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go`, `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb` — see
 > the [top-level README](../README.md).
 
 
@@ -302,23 +302,23 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `auth` |  |
-| `avgResponseTime` |  |
-| `cors` |  |
-| `createdAt` |  |
-| `description` |  |
-| `documentationUrl` |  |
-| `endpoints` |  |
-| `errorRate` |  |
-| `https` |  |
-| `id` |  |
-| `lastChecked` |  |
+| `auth` | Authentication method required |
+| `avgResponseTime` | Average response time in milliseconds |
+| `cors` | Whether CORS is enabled |
+| `createdAt` | When the API was added to the directory |
+| `description` | Description of what the API does |
+| `documentationUrl` | URL to the API documentation |
+| `endpoints` | Available endpoints for this API |
+| `errorRate` | Error rate percentage |
+| `https` | Whether the API supports HTTPS |
+| `id` | Unique identifier for the API |
+| `lastChecked` | When the API was last checked for availability |
 | `method` |  |
 | `path` |  |
-| `reliability` |  |
-| `tags` |  |
-| `title` |  |
-| `url` |  |
+| `reliability` | Reliability percentage based on monitoring |
+| `tags` | Categories/tags associated with the API |
+| `title` | Name of the API |
+| `url` | Base URL of the API |
 
 Operations: list, load.
 
@@ -344,23 +344,23 @@ Create an instance: `const api = client.Api()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `auth` | `string` |  |
-| `avgResponseTime` | `number` |  |
-| `cors` | `boolean` |  |
-| `createdAt` | `string` |  |
-| `description` | `string` |  |
-| `documentationUrl` | `string` |  |
-| `endpoints` | `any[]` |  |
-| `errorRate` | `number` |  |
-| `https` | `boolean` |  |
-| `id` | `number` |  |
-| `lastChecked` | `string` |  |
+| `auth` | `string` | Authentication method required |
+| `avgResponseTime` | `number` | Average response time in milliseconds |
+| `cors` | `boolean` | Whether CORS is enabled |
+| `createdAt` | `string` | When the API was added to the directory |
+| `description` | `string` | Description of what the API does |
+| `documentationUrl` | `string` | URL to the API documentation |
+| `endpoints` | `any[]` | Available endpoints for this API |
+| `errorRate` | `number` | Error rate percentage |
+| `https` | `boolean` | Whether the API supports HTTPS |
+| `id` | `number` | Unique identifier for the API |
+| `lastChecked` | `string` | When the API was last checked for availability |
 | `method` | `string` |  |
 | `path` | `string` |  |
-| `reliability` | `number` |  |
-| `tags` | `any[]` |  |
-| `title` | `string` |  |
-| `url` | `string` |  |
+| `reliability` | `number` | Reliability percentage based on monitoring |
+| `tags` | `any[]` | Categories/tags associated with the API |
+| `title` | `string` | Name of the API |
+| `url` | `string` | Base URL of the API |
 
 #### Example: Load
 

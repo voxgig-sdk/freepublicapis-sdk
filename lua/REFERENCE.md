@@ -90,23 +90,23 @@ local api = client:Api(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `auth` | `string` | No |  |
-| `avgResponseTime` | `number` | No |  |
-| `cors` | `boolean` | No |  |
-| `createdAt` | `string` | No |  |
-| `description` | `string` | No |  |
-| `documentationUrl` | `string` | No |  |
-| `endpoints` | `table` | No |  |
-| `errorRate` | `number` | No |  |
-| `https` | `boolean` | No |  |
-| `id` | `number` | No |  |
-| `lastChecked` | `string` | No |  |
+| `auth` | `string` | No | Authentication method required |
+| `avgResponseTime` | `number` | No | Average response time in milliseconds |
+| `cors` | `boolean` | No | Whether CORS is enabled |
+| `createdAt` | `string` | No | When the API was added to the directory |
+| `description` | `string` | No | Description of what the API does |
+| `documentationUrl` | `string` | No | URL to the API documentation |
+| `endpoints` | `table` | No | Available endpoints for this API |
+| `errorRate` | `number` | No | Error rate percentage |
+| `https` | `boolean` | No | Whether the API supports HTTPS |
+| `id` | `number` | No | Unique identifier for the API |
+| `lastChecked` | `string` | No | When the API was last checked for availability |
 | `method` | `string` | No |  |
 | `path` | `string` | No |  |
-| `reliability` | `number` | No |  |
-| `tags` | `table` | No |  |
-| `title` | `string` | No |  |
-| `url` | `string` | No |  |
+| `reliability` | `number` | No | Reliability percentage based on monitoring |
+| `tags` | `table` | No | Categories/tags associated with the API |
+| `title` | `string` | No | Name of the API |
+| `url` | `string` | No | Base URL of the API |
 
 ### Operations
 

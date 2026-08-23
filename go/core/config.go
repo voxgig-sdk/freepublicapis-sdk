@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "Freepublicapis",
+			"slug": "freepublicapis",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -33,46 +36,57 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "auth",
+						"short": "Authentication method required",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "avgResponseTime",
+						"short": "Average response time in milliseconds",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "cors",
+						"short": "Whether CORS is enabled",
 						"type": "`$BOOLEAN`",
 					},
 					map[string]any{
 						"name": "createdAt",
+						"short": "When the API was added to the directory",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "description",
+						"short": "Description of what the API does",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "documentationUrl",
+						"short": "URL to the API documentation",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "endpoints",
+						"short": "Available endpoints for this API",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "errorRate",
+						"short": "Error rate percentage",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "https",
+						"short": "Whether the API supports HTTPS",
 						"type": "`$BOOLEAN`",
 					},
 					map[string]any{
 						"name": "id",
+						"short": "Unique identifier for the API",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "lastChecked",
+						"short": "When the API was last checked for availability",
 						"type": "`$STRING`",
 					},
 					map[string]any{
@@ -85,18 +99,22 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "reliability",
+						"short": "Reliability percentage based on monitoring",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "tags",
+						"short": "Categories/tags associated with the API",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "title",
+						"short": "Name of the API",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "url",
+						"short": "Base URL of the API",
 						"type": "`$STRING`",
 					},
 				},

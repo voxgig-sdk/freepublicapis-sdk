@@ -253,23 +253,23 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `auth` |  |
-| `avgResponseTime` |  |
-| `cors` |  |
-| `createdAt` |  |
-| `description` |  |
-| `documentationUrl` |  |
-| `endpoints` |  |
-| `errorRate` |  |
-| `https` |  |
-| `id` |  |
-| `lastChecked` |  |
+| `auth` | Authentication method required |
+| `avgResponseTime` | Average response time in milliseconds |
+| `cors` | Whether CORS is enabled |
+| `createdAt` | When the API was added to the directory |
+| `description` | Description of what the API does |
+| `documentationUrl` | URL to the API documentation |
+| `endpoints` | Available endpoints for this API |
+| `errorRate` | Error rate percentage |
+| `https` | Whether the API supports HTTPS |
+| `id` | Unique identifier for the API |
+| `lastChecked` | When the API was last checked for availability |
 | `method` |  |
 | `path` |  |
-| `reliability` |  |
-| `tags` |  |
-| `title` |  |
-| `url` |  |
+| `reliability` | Reliability percentage based on monitoring |
+| `tags` | Categories/tags associated with the API |
+| `title` | Name of the API |
+| `url` | Base URL of the API |
 
 Operations: List, Load.
 
@@ -295,23 +295,23 @@ Create an instance: `api = client.Api`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `auth` | `String` |  |
-| `avgResponseTime` | `Integer` |  |
-| `cors` | `Boolean` |  |
-| `createdAt` | `String` |  |
-| `description` | `String` |  |
-| `documentationUrl` | `String` |  |
-| `endpoints` | `Array` |  |
-| `errorRate` | `Float` |  |
-| `https` | `Boolean` |  |
-| `id` | `Integer` |  |
-| `lastChecked` | `String` |  |
+| `auth` | `String` | Authentication method required |
+| `avgResponseTime` | `Integer` | Average response time in milliseconds |
+| `cors` | `Boolean` | Whether CORS is enabled |
+| `createdAt` | `String` | When the API was added to the directory |
+| `description` | `String` | Description of what the API does |
+| `documentationUrl` | `String` | URL to the API documentation |
+| `endpoints` | `Array` | Available endpoints for this API |
+| `errorRate` | `Float` | Error rate percentage |
+| `https` | `Boolean` | Whether the API supports HTTPS |
+| `id` | `Integer` | Unique identifier for the API |
+| `lastChecked` | `String` | When the API was last checked for availability |
 | `method` | `String` |  |
 | `path` | `String` |  |
-| `reliability` | `Float` |  |
-| `tags` | `Array` |  |
-| `title` | `String` |  |
-| `url` | `String` |  |
+| `reliability` | `Float` | Reliability percentage based on monitoring |
+| `tags` | `Array` | Categories/tags associated with the API |
+| `title` | `String` | Name of the API |
+| `url` | `String` | Base URL of the API |
 
 #### Example: Load
 

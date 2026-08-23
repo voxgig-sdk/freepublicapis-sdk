@@ -98,23 +98,23 @@ fmt.Println(api.GetName()) // "api"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `auth` | `string` | No |  |
-| `avgResponseTime` | `int` | No |  |
-| `cors` | `bool` | No |  |
-| `createdAt` | `string` | No |  |
-| `description` | `string` | No |  |
-| `documentationUrl` | `string` | No |  |
-| `endpoints` | `[]any` | No |  |
-| `errorRate` | `float64` | No |  |
-| `https` | `bool` | No |  |
-| `id` | `int` | No |  |
-| `lastChecked` | `string` | No |  |
+| `auth` | `string` | No | Authentication method required |
+| `avgResponseTime` | `int` | No | Average response time in milliseconds |
+| `cors` | `bool` | No | Whether CORS is enabled |
+| `createdAt` | `string` | No | When the API was added to the directory |
+| `description` | `string` | No | Description of what the API does |
+| `documentationUrl` | `string` | No | URL to the API documentation |
+| `endpoints` | `[]any` | No | Available endpoints for this API |
+| `errorRate` | `float64` | No | Error rate percentage |
+| `https` | `bool` | No | Whether the API supports HTTPS |
+| `id` | `int` | No | Unique identifier for the API |
+| `lastChecked` | `string` | No | When the API was last checked for availability |
 | `method` | `string` | No |  |
 | `path` | `string` | No |  |
-| `reliability` | `float64` | No |  |
-| `tags` | `[]any` | No |  |
-| `title` | `string` | No |  |
-| `url` | `string` | No |  |
+| `reliability` | `float64` | No | Reliability percentage based on monitoring |
+| `tags` | `[]any` | No | Categories/tags associated with the API |
+| `title` | `string` | No | Name of the API |
+| `url` | `string` | No | Base URL of the API |
 
 ### Operations
 

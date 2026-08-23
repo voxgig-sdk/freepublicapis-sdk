@@ -87,23 +87,23 @@ api = client.Api()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `auth` | `str` | No |  |
-| `avgResponseTime` | `int` | No |  |
-| `cors` | `bool` | No |  |
-| `createdAt` | `str` | No |  |
-| `description` | `str` | No |  |
-| `documentationUrl` | `str` | No |  |
-| `endpoints` | `list` | No |  |
-| `errorRate` | `float` | No |  |
-| `https` | `bool` | No |  |
-| `id` | `int` | No |  |
-| `lastChecked` | `str` | No |  |
+| `auth` | `str` | No | Authentication method required |
+| `avgResponseTime` | `int` | No | Average response time in milliseconds |
+| `cors` | `bool` | No | Whether CORS is enabled |
+| `createdAt` | `str` | No | When the API was added to the directory |
+| `description` | `str` | No | Description of what the API does |
+| `documentationUrl` | `str` | No | URL to the API documentation |
+| `endpoints` | `list` | No | Available endpoints for this API |
+| `errorRate` | `float` | No | Error rate percentage |
+| `https` | `bool` | No | Whether the API supports HTTPS |
+| `id` | `int` | No | Unique identifier for the API |
+| `lastChecked` | `str` | No | When the API was last checked for availability |
 | `method` | `str` | No |  |
 | `path` | `str` | No |  |
-| `reliability` | `float` | No |  |
-| `tags` | `list` | No |  |
-| `title` | `str` | No |  |
-| `url` | `str` | No |  |
+| `reliability` | `float` | No | Reliability percentage based on monitoring |
+| `tags` | `list` | No | Categories/tags associated with the API |
+| `title` | `str` | No | Name of the API |
+| `url` | `str` | No | Base URL of the API |
 
 ### Operations
 

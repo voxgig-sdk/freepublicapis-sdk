@@ -256,23 +256,23 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `auth` |  |
-| `avgResponseTime` |  |
-| `cors` |  |
-| `createdAt` |  |
-| `description` |  |
-| `documentationUrl` |  |
-| `endpoints` |  |
-| `errorRate` |  |
-| `https` |  |
-| `id` |  |
-| `lastChecked` |  |
+| `auth` | Authentication method required |
+| `avgResponseTime` | Average response time in milliseconds |
+| `cors` | Whether CORS is enabled |
+| `createdAt` | When the API was added to the directory |
+| `description` | Description of what the API does |
+| `documentationUrl` | URL to the API documentation |
+| `endpoints` | Available endpoints for this API |
+| `errorRate` | Error rate percentage |
+| `https` | Whether the API supports HTTPS |
+| `id` | Unique identifier for the API |
+| `lastChecked` | When the API was last checked for availability |
 | `method` |  |
 | `path` |  |
-| `reliability` |  |
-| `tags` |  |
-| `title` |  |
-| `url` |  |
+| `reliability` | Reliability percentage based on monitoring |
+| `tags` | Categories/tags associated with the API |
+| `title` | Name of the API |
+| `url` | Base URL of the API |
 
 Operations: List, Load.
 
@@ -298,23 +298,23 @@ Create an instance: `api = client.Api()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `auth` | `str` |  |
-| `avgResponseTime` | `int` |  |
-| `cors` | `bool` |  |
-| `createdAt` | `str` |  |
-| `description` | `str` |  |
-| `documentationUrl` | `str` |  |
-| `endpoints` | `list` |  |
-| `errorRate` | `float` |  |
-| `https` | `bool` |  |
-| `id` | `int` |  |
-| `lastChecked` | `str` |  |
+| `auth` | `str` | Authentication method required |
+| `avgResponseTime` | `int` | Average response time in milliseconds |
+| `cors` | `bool` | Whether CORS is enabled |
+| `createdAt` | `str` | When the API was added to the directory |
+| `description` | `str` | Description of what the API does |
+| `documentationUrl` | `str` | URL to the API documentation |
+| `endpoints` | `list` | Available endpoints for this API |
+| `errorRate` | `float` | Error rate percentage |
+| `https` | `bool` | Whether the API supports HTTPS |
+| `id` | `int` | Unique identifier for the API |
+| `lastChecked` | `str` | When the API was last checked for availability |
 | `method` | `str` |  |
 | `path` | `str` |  |
-| `reliability` | `float` |  |
-| `tags` | `list` |  |
-| `title` | `str` |  |
-| `url` | `str` |  |
+| `reliability` | `float` | Reliability percentage based on monitoring |
+| `tags` | `list` | Categories/tags associated with the API |
+| `title` | `str` | Name of the API |
+| `url` | `str` | Base URL of the API |
 
 #### Example: Load
 

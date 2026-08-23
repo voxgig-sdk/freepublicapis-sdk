@@ -28,6 +28,9 @@ def make_config():
     return {
         "main": {
             "name": "Freepublicapis",
+            "slug": "freepublicapis",
+            "version": "0.0.1",
+            "target": "py",
         },
         "feature": {
             "test": {
@@ -50,46 +53,57 @@ def make_config():
         "fields": [
           {
             "name": "auth",
+            "short": "Authentication method required",
             "type": "`$STRING`",
           },
           {
             "name": "avgResponseTime",
+            "short": "Average response time in milliseconds",
             "type": "`$INTEGER`",
           },
           {
             "name": "cors",
+            "short": "Whether CORS is enabled",
             "type": "`$BOOLEAN`",
           },
           {
             "name": "createdAt",
+            "short": "When the API was added to the directory",
             "type": "`$STRING`",
           },
           {
             "name": "description",
+            "short": "Description of what the API does",
             "type": "`$STRING`",
           },
           {
             "name": "documentationUrl",
+            "short": "URL to the API documentation",
             "type": "`$STRING`",
           },
           {
             "name": "endpoints",
+            "short": "Available endpoints for this API",
             "type": "`$ARRAY`",
           },
           {
             "name": "errorRate",
+            "short": "Error rate percentage",
             "type": "`$NUMBER`",
           },
           {
             "name": "https",
+            "short": "Whether the API supports HTTPS",
             "type": "`$BOOLEAN`",
           },
           {
             "name": "id",
+            "short": "Unique identifier for the API",
             "type": "`$INTEGER`",
           },
           {
             "name": "lastChecked",
+            "short": "When the API was last checked for availability",
             "type": "`$STRING`",
           },
           {
@@ -102,18 +116,22 @@ def make_config():
           },
           {
             "name": "reliability",
+            "short": "Reliability percentage based on monitoring",
             "type": "`$NUMBER`",
           },
           {
             "name": "tags",
+            "short": "Categories/tags associated with the API",
             "type": "`$ARRAY`",
           },
           {
             "name": "title",
+            "short": "Name of the API",
             "type": "`$STRING`",
           },
           {
             "name": "url",
+            "short": "Base URL of the API",
             "type": "`$STRING`",
           },
         ],

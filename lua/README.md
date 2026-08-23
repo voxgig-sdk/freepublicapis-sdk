@@ -241,23 +241,23 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `auth` |  |
-| `avgResponseTime` |  |
-| `cors` |  |
-| `createdAt` |  |
-| `description` |  |
-| `documentationUrl` |  |
-| `endpoints` |  |
-| `errorRate` |  |
-| `https` |  |
-| `id` |  |
-| `lastChecked` |  |
+| `auth` | Authentication method required |
+| `avgResponseTime` | Average response time in milliseconds |
+| `cors` | Whether CORS is enabled |
+| `createdAt` | When the API was added to the directory |
+| `description` | Description of what the API does |
+| `documentationUrl` | URL to the API documentation |
+| `endpoints` | Available endpoints for this API |
+| `errorRate` | Error rate percentage |
+| `https` | Whether the API supports HTTPS |
+| `id` | Unique identifier for the API |
+| `lastChecked` | When the API was last checked for availability |
 | `method` |  |
 | `path` |  |
-| `reliability` |  |
-| `tags` |  |
-| `title` |  |
-| `url` |  |
+| `reliability` | Reliability percentage based on monitoring |
+| `tags` | Categories/tags associated with the API |
+| `title` | Name of the API |
+| `url` | Base URL of the API |
 
 Operations: List, Load.
 
@@ -283,23 +283,23 @@ Create an instance: `local api = client:Api(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `auth` | `string` |  |
-| `avgResponseTime` | `number` |  |
-| `cors` | `boolean` |  |
-| `createdAt` | `string` |  |
-| `description` | `string` |  |
-| `documentationUrl` | `string` |  |
-| `endpoints` | `table` |  |
-| `errorRate` | `number` |  |
-| `https` | `boolean` |  |
-| `id` | `number` |  |
-| `lastChecked` | `string` |  |
+| `auth` | `string` | Authentication method required |
+| `avgResponseTime` | `number` | Average response time in milliseconds |
+| `cors` | `boolean` | Whether CORS is enabled |
+| `createdAt` | `string` | When the API was added to the directory |
+| `description` | `string` | Description of what the API does |
+| `documentationUrl` | `string` | URL to the API documentation |
+| `endpoints` | `table` | Available endpoints for this API |
+| `errorRate` | `number` | Error rate percentage |
+| `https` | `boolean` | Whether the API supports HTTPS |
+| `id` | `number` | Unique identifier for the API |
+| `lastChecked` | `string` | When the API was last checked for availability |
 | `method` | `string` |  |
 | `path` | `string` |  |
-| `reliability` | `number` |  |
-| `tags` | `table` |  |
-| `title` | `string` |  |
-| `url` | `string` |  |
+| `reliability` | `number` | Reliability percentage based on monitoring |
+| `tags` | `table` | Categories/tags associated with the API |
+| `title` | `string` | Name of the API |
+| `url` | `string` | Base URL of the API |
 
 #### Example: Load
 

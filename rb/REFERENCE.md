@@ -93,23 +93,23 @@ api = client.Api
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `auth` | `String` | No |  |
-| `avgResponseTime` | `Integer` | No |  |
-| `cors` | `Boolean` | No |  |
-| `createdAt` | `String` | No |  |
-| `description` | `String` | No |  |
-| `documentationUrl` | `String` | No |  |
-| `endpoints` | `Array` | No |  |
-| `errorRate` | `Float` | No |  |
-| `https` | `Boolean` | No |  |
-| `id` | `Integer` | No |  |
-| `lastChecked` | `String` | No |  |
+| `auth` | `String` | No | Authentication method required |
+| `avgResponseTime` | `Integer` | No | Average response time in milliseconds |
+| `cors` | `Boolean` | No | Whether CORS is enabled |
+| `createdAt` | `String` | No | When the API was added to the directory |
+| `description` | `String` | No | Description of what the API does |
+| `documentationUrl` | `String` | No | URL to the API documentation |
+| `endpoints` | `Array` | No | Available endpoints for this API |
+| `errorRate` | `Float` | No | Error rate percentage |
+| `https` | `Boolean` | No | Whether the API supports HTTPS |
+| `id` | `Integer` | No | Unique identifier for the API |
+| `lastChecked` | `String` | No | When the API was last checked for availability |
 | `method` | `String` | No |  |
 | `path` | `String` | No |  |
-| `reliability` | `Float` | No |  |
-| `tags` | `Array` | No |  |
-| `title` | `String` | No |  |
-| `url` | `String` | No |  |
+| `reliability` | `Float` | No | Reliability percentage based on monitoring |
+| `tags` | `Array` | No | Categories/tags associated with the API |
+| `title` | `String` | No | Name of the API |
+| `url` | `String` | No | Base URL of the API |
 
 ### Operations
 
