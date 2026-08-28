@@ -29,23 +29,9 @@
 ---@field id number
 
 ---@class ApiListMatch
----@field auth? string
----@field avgResponseTime? number
----@field cors? boolean
----@field createdAt? string
----@field description? string
----@field documentationUrl? string
----@field endpoints? table
----@field errorRate? number
----@field https? boolean
----@field id? number
----@field lastChecked? string
----@field method? string
----@field path? string
----@field reliability? number
----@field tags? table
----@field title? string
----@field url? string
+---@field limit? number
+---@field page? number
+---@field sort? string
 
 local M = {}
 

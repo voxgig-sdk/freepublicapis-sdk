@@ -30,23 +30,9 @@ export interface ApiLoadMatch {
 }
 
 export interface ApiListMatch {
-  auth?: string
-  avgResponseTime?: number
-  cors?: boolean
-  createdAt?: string
-  description?: string
-  documentationUrl?: string
-  endpoints?: any[]
-  errorRate?: number
-  https?: boolean
-  id?: number
-  lastChecked?: string
-  method?: string
-  path?: string
-  reliability?: number
-  tags?: any[]
-  title?: string
-  url?: string
+  limit?: number
+  page?: number
+  sort?: string
 
   // Selects a custom action instead of the plain list:
   //   'random'

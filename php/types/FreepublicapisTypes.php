@@ -43,22 +43,8 @@ class ApiLoadMatch
 /** Request payload for Api#list. */
 class ApiListMatch
 {
-    public ?string $auth = null;
-    public ?int $avgResponseTime = null;
-    public ?bool $cors = null;
-    public ?string $createdAt = null;
-    public ?string $description = null;
-    public ?string $documentationUrl = null;
-    public ?array $endpoints = null;
-    public ?float $errorRate = null;
-    public ?bool $https = null;
-    public ?int $id = null;
-    public ?string $lastChecked = null;
-    public ?string $method = null;
-    public ?string $path = null;
-    public ?float $reliability = null;
-    public ?array $tags = null;
-    public ?string $title = null;
-    public ?string $url = null;
+    public ?int $limit = null;
+    public ?int $page = null;
+    public ?string $sort = null;
 }
 

@@ -41,20 +41,6 @@ class ApiLoadMatch(TypedDict):
 
 
 class ApiListMatch(TypedDict, total=False):
-    auth: str
-    avgResponseTime: int
-    cors: bool
-    createdAt: str
-    description: str
-    documentationUrl: str
-    endpoints: list
-    errorRate: float
-    https: bool
-    id: int
-    lastChecked: str
-    method: str
-    path: str
-    reliability: float
-    tags: list
-    title: str
-    url: str
+    limit: int
+    page: int
+    sort: str

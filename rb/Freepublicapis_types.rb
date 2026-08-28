@@ -92,74 +92,18 @@ ApiLoadMatch = Struct.new(
 
 # Request payload for Api#list.
 #
-# @!attribute [rw] auth
-#   @return [String, nil]
-#
-# @!attribute [rw] avgResponseTime
+# @!attribute [rw] limit
 #   @return [Integer, nil]
 #
-# @!attribute [rw] cors
-#   @return [Boolean, nil]
-#
-# @!attribute [rw] createdAt
-#   @return [String, nil]
-#
-# @!attribute [rw] description
-#   @return [String, nil]
-#
-# @!attribute [rw] documentationUrl
-#   @return [String, nil]
-#
-# @!attribute [rw] endpoints
-#   @return [Array, nil]
-#
-# @!attribute [rw] errorRate
-#   @return [Float, nil]
-#
-# @!attribute [rw] https
-#   @return [Boolean, nil]
-#
-# @!attribute [rw] id
+# @!attribute [rw] page
 #   @return [Integer, nil]
 #
-# @!attribute [rw] lastChecked
-#   @return [String, nil]
-#
-# @!attribute [rw] method
-#   @return [String, nil]
-#
-# @!attribute [rw] path
-#   @return [String, nil]
-#
-# @!attribute [rw] reliability
-#   @return [Float, nil]
-#
-# @!attribute [rw] tags
-#   @return [Array, nil]
-#
-# @!attribute [rw] title
-#   @return [String, nil]
-#
-# @!attribute [rw] url
+# @!attribute [rw] sort
 #   @return [String, nil]
 ApiListMatch = Struct.new(
-  :auth,
-  :avgResponseTime,
-  :cors,
-  :createdAt,
-  :description,
-  :documentationUrl,
-  :endpoints,
-  :errorRate,
-  :https,
-  :id,
-  :lastChecked,
-  :method,
-  :path,
-  :reliability,
-  :tags,
-  :title,
-  :url,
+  :limit,
+  :page,
+  :sort,
   keyword_init: true
 )
 

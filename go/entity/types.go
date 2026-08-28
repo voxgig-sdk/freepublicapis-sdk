@@ -40,23 +40,9 @@ type ApiLoadMatch struct {
 
 // ApiListMatch is the typed request payload for Api.ListTyped.
 type ApiListMatch struct {
-	Auth *string `json:"auth,omitempty"`
-	AvgResponseTime *int `json:"avgResponseTime,omitempty"`
-	Cors *bool `json:"cors,omitempty"`
-	CreatedAt *string `json:"createdAt,omitempty"`
-	Description *string `json:"description,omitempty"`
-	DocumentationUrl *string `json:"documentationUrl,omitempty"`
-	Endpoints *[]any `json:"endpoints,omitempty"`
-	ErrorRate *float64 `json:"errorRate,omitempty"`
-	Https *bool `json:"https,omitempty"`
-	Id *int `json:"id,omitempty"`
-	LastChecked *string `json:"lastChecked,omitempty"`
-	Method *string `json:"method,omitempty"`
-	Path *string `json:"path,omitempty"`
-	Reliability *float64 `json:"reliability,omitempty"`
-	Tags *[]any `json:"tags,omitempty"`
-	Title *string `json:"title,omitempty"`
-	Url *string `json:"url,omitempty"`
+	Limit *int `json:"limit,omitempty"`
+	Page *int `json:"page,omitempty"`
+	Sort *string `json:"sort,omitempty"`
 }
 
 // asMap turns a typed request/data struct into the map[string]any the
