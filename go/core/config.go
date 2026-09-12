@@ -51,6 +51,7 @@ func MakeConfig() map[string]any {
 						"type": "`$BOOLEAN`",
 					},
 					map[string]any{
+						"format": "date-time",
 						"name": "createdAt",
 						"short": "When the API was added to the directory",
 						"type": "`$STRING`",
@@ -61,6 +62,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "uri",
 						"name": "documentationUrl",
 						"short": "URL to the API documentation",
 						"type": "`$STRING`",
@@ -71,6 +73,7 @@ func MakeConfig() map[string]any {
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
+						"format": "float",
 						"name": "errorRate",
 						"short": "Error rate percentage",
 						"type": "`$NUMBER`",
@@ -86,6 +89,7 @@ func MakeConfig() map[string]any {
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
+						"format": "date-time",
 						"name": "lastChecked",
 						"short": "When the API was last checked for availability",
 						"type": "`$STRING`",
@@ -99,6 +103,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "float",
 						"name": "reliability",
 						"short": "Reliability percentage based on monitoring",
 						"type": "`$NUMBER`",
@@ -114,10 +119,15 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "uri",
 						"name": "url",
 						"short": "Base URL of the API",
 						"type": "`$STRING`",
 					},
+				},
+				"id": map[string]any{
+					"field": "id",
+					"name": "id",
 				},
 				"name": "api",
 				"op": map[string]any{
@@ -154,9 +164,13 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/api/apis",
-								"parts": []any{
-									"api",
-									"apis",
+								"segments": []any{
+									map[string]any{
+										"lit": "api",
+									},
+									map[string]any{
+										"lit": "apis",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -169,15 +183,23 @@ func MakeConfig() map[string]any {
 									"req": "`reqdata`",
 									"res": "`body.data`",
 								},
+								"parts": []any{
+									"api",
+									"apis",
+								},
 							},
 							map[string]any{
 								"args": map[string]any{},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/api/random",
-								"parts": []any{
-									"api",
-									"random",
+								"segments": []any{
+									map[string]any{
+										"lit": "api",
+									},
+									map[string]any{
+										"lit": "random",
+									},
 								},
 								"select": map[string]any{
 									"$action": "random",
@@ -185,6 +207,10 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"api",
+									"random",
 								},
 							},
 						},
@@ -209,10 +235,16 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/api/apis/{id}",
-								"parts": []any{
-									"api",
-									"apis",
-									"{id}",
+								"segments": []any{
+									map[string]any{
+										"lit": "api",
+									},
+									map[string]any{
+										"lit": "apis",
+									},
+									map[string]any{
+										"var": "id",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -222,6 +254,11 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"api",
+									"apis",
+									"{id}",
 								},
 							},
 						},
@@ -233,6 +270,17 @@ func MakeConfig() map[string]any {
 			},
 		},
 	}
+}
+
+// The plugin definitions the model selected per feature, as []any so a
+// feature package can consume them without core naming its types. Empty
+// when no active feature declares active plugin groups for this target.
+var featurePlugins = map[string][]any{
+}
+
+// FeaturePlugins is the definitions list for one feature's chain.
+func FeaturePlugins(name string) []any {
+	return featurePlugins[name]
 }
 
 var (

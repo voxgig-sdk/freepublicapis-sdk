@@ -1,6 +1,14 @@
 # Freepublicapis SDK configuration
 
 
+# The sekreto plugin DEFINITIONS the model selected per feature, imported
+# above by name from the modules the catalogue's active `plugin.def`
+# entries declare. Handed to each feature (secrets builds its Sekreto
+# with them): a provider kind not listed here is unknown to that SDK.
+FEATURE_PLUGINS = {
+}
+
+
 _shared_config = None
 
 
@@ -68,6 +76,7 @@ def make_config():
             "type": "`$BOOLEAN`",
           },
           {
+            "format": "date-time",
             "name": "createdAt",
             "short": "When the API was added to the directory",
             "type": "`$STRING`",
@@ -78,6 +87,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "uri",
             "name": "documentationUrl",
             "short": "URL to the API documentation",
             "type": "`$STRING`",
@@ -88,6 +98,7 @@ def make_config():
             "type": "`$ARRAY`",
           },
           {
+            "format": "float",
             "name": "errorRate",
             "short": "Error rate percentage",
             "type": "`$NUMBER`",
@@ -103,6 +114,7 @@ def make_config():
             "type": "`$INTEGER`",
           },
           {
+            "format": "date-time",
             "name": "lastChecked",
             "short": "When the API was last checked for availability",
             "type": "`$STRING`",
@@ -116,6 +128,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "float",
             "name": "reliability",
             "short": "Reliability percentage based on monitoring",
             "type": "`$NUMBER`",
@@ -131,11 +144,16 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "uri",
             "name": "url",
             "short": "Base URL of the API",
             "type": "`$STRING`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "api",
         "op": {
           "list": {
@@ -171,9 +189,13 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/api/apis",
-                "parts": [
-                  "api",
-                  "apis",
+                "segments": [
+                  {
+                    "lit": "api",
+                  },
+                  {
+                    "lit": "apis",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -186,15 +208,23 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "api",
+                  "apis",
+                ],
               },
               {
                 "args": {},
                 "kind": "http",
                 "method": "GET",
                 "orig": "/api/random",
-                "parts": [
-                  "api",
-                  "random",
+                "segments": [
+                  {
+                    "lit": "api",
+                  },
+                  {
+                    "lit": "random",
+                  },
                 ],
                 "select": {
                   "$action": "random",
@@ -203,6 +233,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "api",
+                  "random",
+                ],
               },
             ],
           },
@@ -226,10 +260,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/api/apis/{id}",
-                "parts": [
-                  "api",
-                  "apis",
-                  "{id}",
+                "segments": [
+                  {
+                    "lit": "api",
+                  },
+                  {
+                    "lit": "apis",
+                  },
+                  {
+                    "var": "id",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -240,6 +280,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "api",
+                  "apis",
+                  "{id}",
+                ],
               },
             ],
           },

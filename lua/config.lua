@@ -47,6 +47,7 @@ local function make_config()
             ["type"] = "`$BOOLEAN`",
           },
           {
+            ["format"] = "date-time",
             ["name"] = "createdAt",
             ["short"] = "When the API was added to the directory",
             ["type"] = "`$STRING`",
@@ -57,6 +58,7 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "uri",
             ["name"] = "documentationUrl",
             ["short"] = "URL to the API documentation",
             ["type"] = "`$STRING`",
@@ -67,6 +69,7 @@ local function make_config()
             ["type"] = "`$ARRAY`",
           },
           {
+            ["format"] = "float",
             ["name"] = "errorRate",
             ["short"] = "Error rate percentage",
             ["type"] = "`$NUMBER`",
@@ -82,6 +85,7 @@ local function make_config()
             ["type"] = "`$INTEGER`",
           },
           {
+            ["format"] = "date-time",
             ["name"] = "lastChecked",
             ["short"] = "When the API was last checked for availability",
             ["type"] = "`$STRING`",
@@ -95,6 +99,7 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "float",
             ["name"] = "reliability",
             ["short"] = "Reliability percentage based on monitoring",
             ["type"] = "`$NUMBER`",
@@ -110,10 +115,15 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "uri",
             ["name"] = "url",
             ["short"] = "Base URL of the API",
             ["type"] = "`$STRING`",
           },
+        },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
         },
         ["name"] = "api",
         ["op"] = {
@@ -150,9 +160,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/api/apis",
-                ["parts"] = {
-                  "api",
-                  "apis",
+                ["segments"] = {
+                  {
+                    ["lit"] = "api",
+                  },
+                  {
+                    ["lit"] = "apis",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -165,15 +179,23 @@ local function make_config()
                   ["req"] = "`reqdata`",
                   ["res"] = "`body.data`",
                 },
+                ["parts"] = {
+                  "api",
+                  "apis",
+                },
               },
               {
                 ["args"] = {},
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/api/random",
-                ["parts"] = {
-                  "api",
-                  "random",
+                ["segments"] = {
+                  {
+                    ["lit"] = "api",
+                  },
+                  {
+                    ["lit"] = "random",
+                  },
                 },
                 ["select"] = {
                   ["$action"] = "random",
@@ -181,6 +203,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "api",
+                  "random",
                 },
               },
             },
@@ -205,10 +231,16 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/api/apis/{id}",
-                ["parts"] = {
-                  "api",
-                  "apis",
-                  "{id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "api",
+                  },
+                  {
+                    ["lit"] = "apis",
+                  },
+                  {
+                    ["var"] = "id",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -218,6 +250,11 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "api",
+                  "apis",
+                  "{id}",
                 },
               },
             },

@@ -59,6 +59,7 @@ module FreepublicapisConfig
               "type" => "`$BOOLEAN`",
             },
             {
+              "format" => "date-time",
               "name" => "createdAt",
               "short" => "When the API was added to the directory",
               "type" => "`$STRING`",
@@ -69,6 +70,7 @@ module FreepublicapisConfig
               "type" => "`$STRING`",
             },
             {
+              "format" => "uri",
               "name" => "documentationUrl",
               "short" => "URL to the API documentation",
               "type" => "`$STRING`",
@@ -79,6 +81,7 @@ module FreepublicapisConfig
               "type" => "`$ARRAY`",
             },
             {
+              "format" => "float",
               "name" => "errorRate",
               "short" => "Error rate percentage",
               "type" => "`$NUMBER`",
@@ -94,6 +97,7 @@ module FreepublicapisConfig
               "type" => "`$INTEGER`",
             },
             {
+              "format" => "date-time",
               "name" => "lastChecked",
               "short" => "When the API was last checked for availability",
               "type" => "`$STRING`",
@@ -107,6 +111,7 @@ module FreepublicapisConfig
               "type" => "`$STRING`",
             },
             {
+              "format" => "float",
               "name" => "reliability",
               "short" => "Reliability percentage based on monitoring",
               "type" => "`$NUMBER`",
@@ -122,11 +127,16 @@ module FreepublicapisConfig
               "type" => "`$STRING`",
             },
             {
+              "format" => "uri",
               "name" => "url",
               "short" => "Base URL of the API",
               "type" => "`$STRING`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "api",
           "op" => {
             "list" => {
@@ -162,9 +172,13 @@ module FreepublicapisConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api/apis",
-                  "parts" => [
-                    "api",
-                    "apis",
+                  "segments" => [
+                    {
+                      "lit" => "api",
+                    },
+                    {
+                      "lit" => "apis",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -177,15 +191,23 @@ module FreepublicapisConfig
                     "req" => "`reqdata`",
                     "res" => "`body.data`",
                   },
+                  "parts" => [
+                    "api",
+                    "apis",
+                  ],
                 },
                 {
                   "args" => {},
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api/random",
-                  "parts" => [
-                    "api",
-                    "random",
+                  "segments" => [
+                    {
+                      "lit" => "api",
+                    },
+                    {
+                      "lit" => "random",
+                    },
                   ],
                   "select" => {
                     "$action" => "random",
@@ -194,6 +216,10 @@ module FreepublicapisConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "api",
+                    "random",
+                  ],
                 },
               ],
             },
@@ -217,10 +243,16 @@ module FreepublicapisConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api/apis/{id}",
-                  "parts" => [
-                    "api",
-                    "apis",
-                    "{id}",
+                  "segments" => [
+                    {
+                      "lit" => "api",
+                    },
+                    {
+                      "lit" => "apis",
+                    },
+                    {
+                      "var" => "id",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -231,6 +263,11 @@ module FreepublicapisConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "api",
+                    "apis",
+                    "{id}",
+                  ],
                 },
               ],
             },

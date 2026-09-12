@@ -24,6 +24,7 @@ main: kit: entity: api: {
       type: "`$BOOLEAN`"
     }
     {
+      format: "date-time"
       name: "createdAt"
       req: false
       short: "When the API was added to the directory"
@@ -36,6 +37,7 @@ main: kit: entity: api: {
       type: "`$STRING`"
     }
     {
+      format: "uri"
       name: "documentationUrl"
       req: false
       short: "URL to the API documentation"
@@ -48,6 +50,7 @@ main: kit: entity: api: {
       type: "`$ARRAY`"
     }
     {
+      format: "float"
       name: "errorRate"
       req: false
       short: "Error rate percentage"
@@ -66,6 +69,7 @@ main: kit: entity: api: {
       type: "`$INTEGER`"
     }
     {
+      format: "date-time"
       name: "lastChecked"
       req: false
       short: "When the API was last checked for availability"
@@ -82,6 +86,7 @@ main: kit: entity: api: {
       type: "`$STRING`"
     }
     {
+      format: "float"
       name: "reliability"
       req: false
       short: "Reliability percentage based on monitoring"
@@ -100,6 +105,7 @@ main: kit: entity: api: {
       type: "`$STRING`"
     }
     {
+      format: "uri"
       name: "url"
       req: false
       short: "Base URL of the API"
@@ -148,9 +154,13 @@ main: kit: entity: api: {
           }
           method: "GET"
           orig: "/api/apis"
-          parts: [
-            "api"
-            "apis"
+          segments: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "apis"
+            }
           ]
           select: {
             exist: [
@@ -167,9 +177,13 @@ main: kit: entity: api: {
         {
           method: "GET"
           orig: "/api/random"
-          parts: [
-            "api"
-            "random"
+          segments: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "random"
+            }
           ]
           select: {
             "$action": "random"
@@ -199,10 +213,16 @@ main: kit: entity: api: {
           }
           method: "GET"
           orig: "/api/apis/{id}"
-          parts: [
-            "api"
-            "apis"
-            "{id}"
+          segments: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "apis"
+            }
+            {
+              var: "id"
+            }
           ]
           select: {
             exist: [
