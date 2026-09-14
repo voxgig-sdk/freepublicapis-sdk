@@ -105,7 +105,7 @@ local results, err = client:Api():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/freepublicapis` | publish pending — [install from git tag](https://github.com/voxgig-sdk/freepublicapis-sdk/releases) |
+| TypeScript | `@voxgig-sdk/freepublicapis-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/freepublicapis-sdk/releases) |
 | Python | `voxgig-sdk-freepublicapis` | publish pending — [install from git tag](https://github.com/voxgig-sdk/freepublicapis-sdk/releases) |
 | PHP | `voxgig-sdk/freepublicapis` | publish pending — [install from git tag](https://github.com/voxgig-sdk/freepublicapis-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/freepublicapis-sdk/go` | `go get github.com/voxgig-sdk/freepublicapis-sdk/go@latest` |
@@ -119,7 +119,7 @@ local results, err = client:Api():list()
 ### TypeScript
 
 ```ts
-import { FreepublicapisSDK } from '@voxgig-sdk/freepublicapis'
+import { FreepublicapisSDK } from '@voxgig-sdk/freepublicapis-sdk'
 
 const client = new FreepublicapisSDK()
 
