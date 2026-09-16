@@ -4,7 +4,10 @@ declare(strict_types=1);
 // Freepublicapis SDK feature factory
 
 require_once __DIR__ . '/feature/BaseFeature.php';
+require_once __DIR__ . '/feature/RatelimitFeature.php';
+require_once __DIR__ . '/feature/RetryFeature.php';
 require_once __DIR__ . '/feature/TestFeature.php';
+require_once __DIR__ . '/feature/TimeoutFeature.php';
 
 
 class FreepublicapisFeatures
@@ -14,8 +17,14 @@ class FreepublicapisFeatures
         switch ($name) {
             case "base":
                 return new FreepublicapisBaseFeature();
+            case "ratelimit":
+                return new FreepublicapisRatelimitFeature();
+            case "retry":
+                return new FreepublicapisRetryFeature();
             case "test":
                 return new FreepublicapisTestFeature();
+            case "timeout":
+                return new FreepublicapisTimeoutFeature();
             default:
                 return new FreepublicapisBaseFeature();
         }
@@ -31,7 +40,10 @@ class FreepublicapisFeatures
     {
         switch ($name) {
             case "base":
+            case "ratelimit":
+            case "retry":
             case "test":
+            case "timeout":
                 return true;
             default:
                 return false;

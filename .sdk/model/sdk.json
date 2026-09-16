@@ -24,7 +24,71 @@
         "repr": "auto"
       },
       "contributor": {},
-      "docs": {},
+      "doc": {
+        "active": true,
+        "assets": {
+          "path": ".sdk/doc/assets"
+        },
+        "brand": {
+          "label": "",
+          "notice": "",
+          "shortNotice": "",
+          "url": ""
+        },
+        "ci": {
+          "active": true,
+          "branch": "main"
+        },
+        "content": {
+          "path": ".sdk/doc/content"
+        },
+        "edition": {
+          "summary": {
+            "active": true,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "summary",
+            "name": "summary",
+            "origname": "",
+            "output": {
+              "path": "SUMMARY.md"
+            },
+            "package": "@voxgig/docgen",
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          }
+        },
+        "qa": {
+          "vocabulary": []
+        },
+        "style": {
+          "color": {
+            "accent": "#00c6d8",
+            "background": "#f5f5f9",
+            "darkBackground": "#0f1117",
+            "darkText": "#e6edf3",
+            "primary": "#e70042",
+            "text": "#0a0a0a"
+          },
+          "font": "Nunito, system-ui, sans-serif",
+          "fontFile": "",
+          "headingFont": "Nunito, system-ui, sans-serif",
+          "headingFontFile": "",
+          "logo": "",
+          "mode": "light",
+          "mono": "ui-monospace, monospace",
+          "monoFile": ""
+        },
+        "target": {}
+      },
       "entity": {
         "api": {
           "active": true,
@@ -199,6 +263,12 @@
                       }
                     ]
                   },
+                  "contract": {
+                    "id": "GET /api/apis",
+                    "json": "{\"operationId\":\"listAPIs\",\"parameters\":[{\"description\":\"Maximum number of APIs to return\",\"in\":\"query\",\"name\":\"limit\",\"required\":false,\"schema\":{\"default\":10,\"example\":10,\"maximum\":100,\"minimum\":1,\"type\":\"integer\"}},{\"description\":\"Sort order for the results\",\"in\":\"query\",\"name\":\"sort\",\"required\":false,\"schema\":{\"default\":\"best\",\"enum\":[\"best\",\"newest\",\"oldest\",\"name\"],\"example\":\"best\",\"type\":\"string\"}},{\"description\":\"Page number for pagination\",\"in\":\"query\",\"name\":\"page\",\"required\":false,\"schema\":{\"default\":1,\"example\":1,\"minimum\":1,\"type\":\"integer\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"data\":{\"description\":\"List of APIs\",\"items\":{\"properties\":{\"auth\":{\"description\":\"Authentication method required\",\"example\":\"apiKey\",\"nullable\":true,\"type\":\"string\"},\"avgResponseTime\":{\"description\":\"Average response time in milliseconds\",\"example\":392,\"nullable\":true,\"type\":\"integer\"},\"cors\":{\"description\":\"Whether CORS is enabled\",\"example\":true,\"type\":\"boolean\"},\"createdAt\":{\"description\":\"When the API was added to the directory\",\"format\":\"date-time\",\"type\":\"string\"},\"description\":{\"description\":\"Description of what the API does\",\"example\":\"Generate random data for testing and development\",\"type\":\"string\"},\"documentationUrl\":{\"description\":\"URL to the API documentation\",\"example\":\"https://api.example.com/docs\",\"format\":\"uri\",\"type\":\"string\"},\"endpoints\":{\"description\":\"Available endpoints for this API\",\"items\":{\"properties\":{\"description\":{\"example\":\"Get list of users\",\"type\":\"string\"},\"method\":{\"example\":\"GET\",\"type\":\"string\"},\"path\":{\"example\":\"/api/v1/users\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"},\"errorRate\":{\"description\":\"Error rate percentage\",\"example\":0.5,\"format\":\"float\",\"maximum\":100,\"minimum\":0,\"type\":\"number\"},\"https\":{\"description\":\"Whether the API supports HTTPS\",\"example\":true,\"type\":\"boolean\"},\"id\":{\"description\":\"Unique identifier for the API\",\"example\":275,\"type\":\"integer\"},\"lastChecked\":{\"description\":\"When the API was last checked for availability\",\"format\":\"date-time\",\"type\":\"string\"},\"reliability\":{\"description\":\"Reliability percentage based on monitoring\",\"example\":99.5,\"format\":\"float\",\"maximum\":100,\"minimum\":0,\"type\":\"number\"},\"tags\":{\"description\":\"Categories/tags associated with the API\",\"example\":[\"data\",\"testing\",\"development\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"title\":{\"description\":\"Name of the API\",\"example\":\"Random Data API\",\"type\":\"string\"},\"url\":{\"description\":\"Base URL of the API\",\"example\":\"https://api.example.com\",\"format\":\"uri\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"},\"limit\":{\"description\":\"Number of items per page\",\"example\":10,\"type\":\"integer\"},\"page\":{\"description\":\"Current page number\",\"example\":1,\"type\":\"integer\"},\"total\":{\"description\":\"Total number of APIs available\",\"example\":501,\"type\":\"integer\"},\"totalPages\":{\"description\":\"Total number of pages\",\"example\":51,\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Successful response with list of APIs\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"example\":\"Rate limit exceeded\",\"type\":\"string\"},\"message\":{\"description\":\"Detailed error message\",\"example\":\"You have exceeded the daily limit of 1000 requests. Please try again tomorrow.\",\"type\":\"string\"},\"statusCode\":{\"description\":\"HTTP status code\",\"example\":429,\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Bad request - invalid parameters\"},\"429\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"example\":\"Rate limit exceeded\",\"type\":\"string\"},\"message\":{\"description\":\"Detailed error message\",\"example\":\"You have exceeded the daily limit of 1000 requests. Please try again tomorrow.\",\"type\":\"string\"},\"statusCode\":{\"description\":\"HTTP status code\",\"example\":429,\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Rate limit exceeded (1000 requests per day)\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"example\":\"Rate limit exceeded\",\"type\":\"string\"},\"message\":{\"description\":\"Detailed error message\",\"example\":\"You have exceeded the daily limit of 1000 requests. Please try again tomorrow.\",\"type\":\"string\"},\"statusCode\":{\"description\":\"HTTP status code\",\"example\":429,\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "GET",
                   "orig": "/api/apis",
@@ -225,6 +295,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "GET /api/random",
+                    "json": "{\"operationId\":\"getRandomAPI\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"auth\":{\"description\":\"Authentication method required\",\"example\":\"apiKey\",\"nullable\":true,\"type\":\"string\"},\"avgResponseTime\":{\"description\":\"Average response time in milliseconds\",\"example\":392,\"nullable\":true,\"type\":\"integer\"},\"cors\":{\"description\":\"Whether CORS is enabled\",\"example\":true,\"type\":\"boolean\"},\"createdAt\":{\"description\":\"When the API was added to the directory\",\"format\":\"date-time\",\"type\":\"string\"},\"description\":{\"description\":\"Description of what the API does\",\"example\":\"Generate random data for testing and development\",\"type\":\"string\"},\"documentationUrl\":{\"description\":\"URL to the API documentation\",\"example\":\"https://api.example.com/docs\",\"format\":\"uri\",\"type\":\"string\"},\"endpoints\":{\"description\":\"Available endpoints for this API\",\"items\":{\"properties\":{\"description\":{\"example\":\"Get list of users\",\"type\":\"string\"},\"method\":{\"example\":\"GET\",\"type\":\"string\"},\"path\":{\"example\":\"/api/v1/users\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"},\"errorRate\":{\"description\":\"Error rate percentage\",\"example\":0.5,\"format\":\"float\",\"maximum\":100,\"minimum\":0,\"type\":\"number\"},\"https\":{\"description\":\"Whether the API supports HTTPS\",\"example\":true,\"type\":\"boolean\"},\"id\":{\"description\":\"Unique identifier for the API\",\"example\":275,\"type\":\"integer\"},\"lastChecked\":{\"description\":\"When the API was last checked for availability\",\"format\":\"date-time\",\"type\":\"string\"},\"reliability\":{\"description\":\"Reliability percentage based on monitoring\",\"example\":99.5,\"format\":\"float\",\"maximum\":100,\"minimum\":0,\"type\":\"number\"},\"tags\":{\"description\":\"Categories/tags associated with the API\",\"example\":[\"data\",\"testing\",\"development\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"title\":{\"description\":\"Name of the API\",\"example\":\"Random Data API\",\"type\":\"string\"},\"url\":{\"description\":\"Base URL of the API\",\"example\":\"https://api.example.com\",\"format\":\"uri\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful response with a random API\"},\"429\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"example\":\"Rate limit exceeded\",\"type\":\"string\"},\"message\":{\"description\":\"Detailed error message\",\"example\":\"You have exceeded the daily limit of 1000 requests. Please try again tomorrow.\",\"type\":\"string\"},\"statusCode\":{\"description\":\"HTTP status code\",\"example\":429,\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Rate limit exceeded (1000 requests per day)\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"example\":\"Rate limit exceeded\",\"type\":\"string\"},\"message\":{\"description\":\"Detailed error message\",\"example\":\"You have exceeded the daily limit of 1000 requests. Please try again tomorrow.\",\"type\":\"string\"},\"statusCode\":{\"description\":\"HTTP status code\",\"example\":429,\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "GET",
                   "orig": "/api/random",
@@ -265,6 +341,12 @@
                       }
                     ]
                   },
+                  "contract": {
+                    "id": "GET /api/apis/{id}",
+                    "json": "{\"operationId\":\"getAPIById\",\"parameters\":[{\"description\":\"The unique identifier of the API\",\"in\":\"path\",\"name\":\"id\",\"required\":true,\"schema\":{\"example\":275,\"type\":\"integer\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"auth\":{\"description\":\"Authentication method required\",\"example\":\"apiKey\",\"nullable\":true,\"type\":\"string\"},\"avgResponseTime\":{\"description\":\"Average response time in milliseconds\",\"example\":392,\"nullable\":true,\"type\":\"integer\"},\"cors\":{\"description\":\"Whether CORS is enabled\",\"example\":true,\"type\":\"boolean\"},\"createdAt\":{\"description\":\"When the API was added to the directory\",\"format\":\"date-time\",\"type\":\"string\"},\"description\":{\"description\":\"Description of what the API does\",\"example\":\"Generate random data for testing and development\",\"type\":\"string\"},\"documentationUrl\":{\"description\":\"URL to the API documentation\",\"example\":\"https://api.example.com/docs\",\"format\":\"uri\",\"type\":\"string\"},\"endpoints\":{\"description\":\"Available endpoints for this API\",\"items\":{\"properties\":{\"description\":{\"example\":\"Get list of users\",\"type\":\"string\"},\"method\":{\"example\":\"GET\",\"type\":\"string\"},\"path\":{\"example\":\"/api/v1/users\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"},\"errorRate\":{\"description\":\"Error rate percentage\",\"example\":0.5,\"format\":\"float\",\"maximum\":100,\"minimum\":0,\"type\":\"number\"},\"https\":{\"description\":\"Whether the API supports HTTPS\",\"example\":true,\"type\":\"boolean\"},\"id\":{\"description\":\"Unique identifier for the API\",\"example\":275,\"type\":\"integer\"},\"lastChecked\":{\"description\":\"When the API was last checked for availability\",\"format\":\"date-time\",\"type\":\"string\"},\"reliability\":{\"description\":\"Reliability percentage based on monitoring\",\"example\":99.5,\"format\":\"float\",\"maximum\":100,\"minimum\":0,\"type\":\"number\"},\"tags\":{\"description\":\"Categories/tags associated with the API\",\"example\":[\"data\",\"testing\",\"development\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"title\":{\"description\":\"Name of the API\",\"example\":\"Random Data API\",\"type\":\"string\"},\"url\":{\"description\":\"Base URL of the API\",\"example\":\"https://api.example.com\",\"format\":\"uri\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful response with API details\"},\"404\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"example\":\"Rate limit exceeded\",\"type\":\"string\"},\"message\":{\"description\":\"Detailed error message\",\"example\":\"You have exceeded the daily limit of 1000 requests. Please try again tomorrow.\",\"type\":\"string\"},\"statusCode\":{\"description\":\"HTTP status code\",\"example\":429,\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"API not found\"},\"429\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"example\":\"Rate limit exceeded\",\"type\":\"string\"},\"message\":{\"description\":\"Detailed error message\",\"example\":\"You have exceeded the daily limit of 1000 requests. Please try again tomorrow.\",\"type\":\"string\"},\"statusCode\":{\"description\":\"HTTP status code\",\"example\":429,\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Rate limit exceeded (1000 requests per day)\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"example\":\"Rate limit exceeded\",\"type\":\"string\"},\"message\":{\"description\":\"Detailed error message\",\"example\":\"You have exceeded the daily limit of 1000 requests. Please try again tomorrow.\",\"type\":\"string\"},\"statusCode\":{\"description\":\"HTTP status code\",\"example\":429,\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "GET",
                   "orig": "/api/apis/{id}",
@@ -298,13 +380,223 @@
         }
       },
       "feature": {
+        "ratelimit": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "config": {
+            "options": {
+              "active": false,
+              "burst": 5,
+              "rate": 5
+            },
+            "optspec": {
+              "now": "`$FUNCTION`",
+              "sleep": "`$FUNCTION`"
+            },
+            "strict": false
+          },
+          "hook": {
+            "GetData": {
+              "active": false,
+              "await": false
+            },
+            "GetMatch": {
+              "active": false,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": false,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": false,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PreRequest": {
+              "active": false,
+              "await": false
+            },
+            "PreResponse": {
+              "active": false,
+              "await": false
+            },
+            "PreResult": {
+              "active": false,
+              "await": false
+            },
+            "PreSpec": {
+              "active": false,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "SetData": {
+              "active": false,
+              "await": false
+            }
+          },
+          "name": "ratelimit",
+          "needs": {},
+          "origname": "",
+          "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
+          "target": {
+            "go": {
+              "deps": {}
+            },
+            "go-cli": {
+              "deps": {}
+            },
+            "go-mcp": {
+              "deps": {}
+            },
+            "lua": {
+              "deps": {}
+            },
+            "php": {
+              "deps": {}
+            },
+            "py": {
+              "deps": {}
+            },
+            "rb": {
+              "deps": {}
+            },
+            "ts": {
+              "deps": {}
+            }
+          },
+          "title": "Client-side rate limiting via a token bucket",
+          "transport": "wrap",
+          "version": "0.0.1"
+        },
+        "retry": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "config": {
+            "options": {
+              "active": false,
+              "factor": 2,
+              "maxDelay": 2000,
+              "minDelay": 50,
+              "retries": 2,
+              "statuses": [
+                408,
+                425,
+                429,
+                500,
+                502,
+                503,
+                504
+              ]
+            },
+            "optspec": {
+              "jitter": "`$BOOLEAN`",
+              "sleep": "`$FUNCTION`"
+            },
+            "strict": false
+          },
+          "hook": {
+            "GetData": {
+              "active": false,
+              "await": false
+            },
+            "GetMatch": {
+              "active": false,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": false,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": false,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PreRequest": {
+              "active": false,
+              "await": false
+            },
+            "PreResponse": {
+              "active": false,
+              "await": false
+            },
+            "PreResult": {
+              "active": false,
+              "await": false
+            },
+            "PreSpec": {
+              "active": false,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "SetData": {
+              "active": false,
+              "await": false
+            }
+          },
+          "name": "retry",
+          "needs": {},
+          "origname": "",
+          "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
+          "target": {
+            "go": {
+              "deps": {}
+            },
+            "go-cli": {
+              "deps": {}
+            },
+            "go-mcp": {
+              "deps": {}
+            },
+            "lua": {
+              "deps": {}
+            },
+            "php": {
+              "deps": {}
+            },
+            "py": {
+              "deps": {}
+            },
+            "rb": {
+              "deps": {}
+            },
+            "ts": {
+              "deps": {}
+            }
+          },
+          "title": "Automatic retry of transient failures with exponential backoff",
+          "transport": "wrap",
+          "version": "0.0.1"
+        },
         "test": {
           "active": true,
           "base": "node_modules/@voxgig/sdkgen/project/.sdk",
           "config": {
             "options": {
               "active": false
-            }
+            },
+            "optspec": {
+              "entity": "`$MAP`",
+              "net": "`$MAP`"
+            },
+            "strict": false
           },
           "hook": {
             "GetData": {
@@ -395,6 +687,102 @@
           "title": "In-memory mock transport for testing without a live server",
           "transport": "base",
           "version": "0.0.1"
+        },
+        "timeout": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "config": {
+            "options": {
+              "active": false,
+              "ms": 30000
+            },
+            "optspec": {
+              "clearTimer": "`$FUNCTION`",
+              "setTimer": "`$FUNCTION`"
+            },
+            "strict": false
+          },
+          "hook": {
+            "GetData": {
+              "active": false,
+              "await": false
+            },
+            "GetMatch": {
+              "active": false,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": false,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": false,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PreRequest": {
+              "active": false,
+              "await": false
+            },
+            "PreResponse": {
+              "active": false,
+              "await": false
+            },
+            "PreResult": {
+              "active": false,
+              "await": false
+            },
+            "PreSpec": {
+              "active": false,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "SetData": {
+              "active": false,
+              "await": false
+            }
+          },
+          "name": "timeout",
+          "needs": {},
+          "origname": "",
+          "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
+          "target": {
+            "go": {
+              "deps": {}
+            },
+            "go-cli": {
+              "deps": {}
+            },
+            "go-mcp": {
+              "deps": {}
+            },
+            "lua": {
+              "deps": {}
+            },
+            "php": {
+              "deps": {}
+            },
+            "py": {
+              "deps": {}
+            },
+            "rb": {
+              "deps": {}
+            },
+            "ts": {
+              "deps": {}
+            }
+          },
+          "title": "Per-request timeout with transport abort",
+          "transport": "wrap",
+          "version": "0.0.1"
         }
       },
       "flow": {
@@ -467,6 +855,48 @@
         "website": "https://www.freepublicapis.com/api"
       },
       "option": {},
+      "optspec": {
+        "allow": {
+          "method": "GET,PUT,POST,PATCH,DELETE,OPTIONS",
+          "op": "create,update,load,list,remove,command,direct,graphql"
+        },
+        "apikey": "",
+        "auth": {
+          "basic": false,
+          "prefix": ""
+        },
+        "base": "http://localhost:8000",
+        "clean": {
+          "keys": "key,token,id"
+        },
+        "entity": {
+          "`$CHILD`": {
+            "`$OPEN`": true,
+            "active": false,
+            "alias": {}
+          }
+        },
+        "extend": "`$ANY`",
+        "headers": {
+          "`$CHILD`": "`$STRING`"
+        },
+        "prefix": "",
+        "secret": "",
+        "server": {
+          "`$CHILD`": ""
+        },
+        "suffix": "",
+        "system": {
+          "fetch": "`$ANY`"
+        },
+        "test": {
+          "active": false,
+          "entity": {
+            "`$OPEN`": true
+          }
+        },
+        "utility": {}
+      },
       "repo": {
         "host": "github.com",
         "path": ""
@@ -1021,6 +1451,7 @@
           },
           "package": "@voxgig/sdkgen",
           "provides": {
+            "schema": true,
             "sekreto": true
           },
           "publish": {
@@ -1062,7 +1493,7 @@
         "live": {
           "app": false,
           "base": "",
-          "strict": false
+          "strict": true
         }
       }
     }

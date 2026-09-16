@@ -1,12 +1,18 @@
 # Freepublicapis SDK feature factory
 
 from freepublicapis_sdk.feature.base_feature import FreepublicapisBaseFeature
+from freepublicapis_sdk.feature.ratelimit_feature import FreepublicapisRatelimitFeature
+from freepublicapis_sdk.feature.retry_feature import FreepublicapisRetryFeature
 from freepublicapis_sdk.feature.test_feature import FreepublicapisTestFeature
+from freepublicapis_sdk.feature.timeout_feature import FreepublicapisTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: FreepublicapisBaseFeature(),
+    "ratelimit": lambda: FreepublicapisRatelimitFeature(),
+    "retry": lambda: FreepublicapisRetryFeature(),
     "test": lambda: FreepublicapisTestFeature(),
+    "timeout": lambda: FreepublicapisTimeoutFeature(),
 }
 
 

@@ -3,7 +3,7 @@
     "api": {
       "API00": {
         "auth": "saa",
-        "avgResponseTime": "sab",
+        "avgResponseTime": 171,
         "cors": true,
         "createdAt": "sad",
         "description": "sae",
@@ -22,7 +22,7 @@
       },
       "API01": {
         "auth": "s154",
-        "avgResponseTime": "s155",
+        "avgResponseTime": 341,
         "cors": true,
         "createdAt": "s157",
         "description": "s158",
@@ -41,7 +41,7 @@
       },
       "API02": {
         "auth": "s1fe",
-        "avgResponseTime": "s1ff",
+        "avgResponseTime": 511,
         "cors": true,
         "createdAt": "s201",
         "description": "s202",
@@ -64,7 +64,7 @@
     "api": {
       "api_ref01": {
         "auth": "s2a8",
-        "avgResponseTime": "s2a9",
+        "avgResponseTime": 681,
         "cors": true,
         "createdAt": "s2ab",
         "description": "s2ac",
@@ -79,6 +79,700 @@
         "tags": [],
         "title": "s2b7",
         "url": "s2b8"
+      }
+    }
+  },
+  "requests": {
+    "GET /api/apis": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "listAPIs",
+        "parameters": [
+          {
+            "description": "Maximum number of APIs to return",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 10,
+              "example": 10,
+              "maximum": 100,
+              "minimum": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Sort order for the results",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "schema": {
+              "default": "best",
+              "enum": [
+                "best",
+                "newest",
+                "oldest",
+                "name"
+              ],
+              "example": "best",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Page number for pagination",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "schema": {
+              "default": 1,
+              "example": 1,
+              "minimum": 1,
+              "type": "integer"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "data": {
+                      "description": "List of APIs",
+                      "items": {
+                        "properties": {
+                          "auth": {
+                            "description": "Authentication method required",
+                            "example": "apiKey",
+                            "nullable": true,
+                            "type": "string"
+                          },
+                          "avgResponseTime": {
+                            "description": "Average response time in milliseconds",
+                            "example": 392,
+                            "nullable": true,
+                            "type": "integer"
+                          },
+                          "cors": {
+                            "description": "Whether CORS is enabled",
+                            "example": true,
+                            "type": "boolean"
+                          },
+                          "createdAt": {
+                            "description": "When the API was added to the directory",
+                            "format": "date-time",
+                            "type": "string"
+                          },
+                          "description": {
+                            "description": "Description of what the API does",
+                            "example": "Generate random data for testing and development",
+                            "type": "string"
+                          },
+                          "documentationUrl": {
+                            "description": "URL to the API documentation",
+                            "example": "https://api.example.com/docs",
+                            "format": "uri",
+                            "type": "string"
+                          },
+                          "endpoints": {
+                            "description": "Available endpoints for this API",
+                            "items": {
+                              "properties": {
+                                "description": {
+                                  "example": "Get list of users",
+                                  "type": "string"
+                                },
+                                "method": {
+                                  "example": "GET",
+                                  "type": "string"
+                                },
+                                "path": {
+                                  "example": "/api/v1/users",
+                                  "type": "string"
+                                }
+                              },
+                              "type": "object"
+                            },
+                            "type": "array"
+                          },
+                          "errorRate": {
+                            "description": "Error rate percentage",
+                            "example": 0.5,
+                            "format": "float",
+                            "maximum": 100,
+                            "minimum": 0,
+                            "type": "number"
+                          },
+                          "https": {
+                            "description": "Whether the API supports HTTPS",
+                            "example": true,
+                            "type": "boolean"
+                          },
+                          "id": {
+                            "description": "Unique identifier for the API",
+                            "example": 275,
+                            "type": "integer"
+                          },
+                          "lastChecked": {
+                            "description": "When the API was last checked for availability",
+                            "format": "date-time",
+                            "type": "string"
+                          },
+                          "reliability": {
+                            "description": "Reliability percentage based on monitoring",
+                            "example": 99.5,
+                            "format": "float",
+                            "maximum": 100,
+                            "minimum": 0,
+                            "type": "number"
+                          },
+                          "tags": {
+                            "description": "Categories/tags associated with the API",
+                            "example": [
+                              "data",
+                              "testing",
+                              "development"
+                            ],
+                            "items": {
+                              "type": "string"
+                            },
+                            "type": "array"
+                          },
+                          "title": {
+                            "description": "Name of the API",
+                            "example": "Random Data API",
+                            "type": "string"
+                          },
+                          "url": {
+                            "description": "Base URL of the API",
+                            "example": "https://api.example.com",
+                            "format": "uri",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "limit": {
+                      "description": "Number of items per page",
+                      "example": 10,
+                      "type": "integer"
+                    },
+                    "page": {
+                      "description": "Current page number",
+                      "example": 1,
+                      "type": "integer"
+                    },
+                    "total": {
+                      "description": "Total number of APIs available",
+                      "example": 501,
+                      "type": "integer"
+                    },
+                    "totalPages": {
+                      "description": "Total number of pages",
+                      "example": 51,
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response with list of APIs"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "error": {
+                      "description": "Error message",
+                      "example": "Rate limit exceeded",
+                      "type": "string"
+                    },
+                    "message": {
+                      "description": "Detailed error message",
+                      "example": "You have exceeded the daily limit of 1000 requests. Please try again tomorrow.",
+                      "type": "string"
+                    },
+                    "statusCode": {
+                      "description": "HTTP status code",
+                      "example": 429,
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Bad request - invalid parameters"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "error": {
+                      "description": "Error message",
+                      "example": "Rate limit exceeded",
+                      "type": "string"
+                    },
+                    "message": {
+                      "description": "Detailed error message",
+                      "example": "You have exceeded the daily limit of 1000 requests. Please try again tomorrow.",
+                      "type": "string"
+                    },
+                    "statusCode": {
+                      "description": "HTTP status code",
+                      "example": 429,
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Rate limit exceeded (1000 requests per day)"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "error": {
+                      "description": "Error message",
+                      "example": "Rate limit exceeded",
+                      "type": "string"
+                    },
+                    "message": {
+                      "description": "Detailed error message",
+                      "example": "You have exceeded the daily limit of 1000 requests. Please try again tomorrow.",
+                      "type": "string"
+                    },
+                    "statusCode": {
+                      "description": "HTTP status code",
+                      "example": 429,
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /api/random": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getRandomAPI",
+        "parameters": [],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "auth": {
+                      "description": "Authentication method required",
+                      "example": "apiKey",
+                      "nullable": true,
+                      "type": "string"
+                    },
+                    "avgResponseTime": {
+                      "description": "Average response time in milliseconds",
+                      "example": 392,
+                      "nullable": true,
+                      "type": "integer"
+                    },
+                    "cors": {
+                      "description": "Whether CORS is enabled",
+                      "example": true,
+                      "type": "boolean"
+                    },
+                    "createdAt": {
+                      "description": "When the API was added to the directory",
+                      "format": "date-time",
+                      "type": "string"
+                    },
+                    "description": {
+                      "description": "Description of what the API does",
+                      "example": "Generate random data for testing and development",
+                      "type": "string"
+                    },
+                    "documentationUrl": {
+                      "description": "URL to the API documentation",
+                      "example": "https://api.example.com/docs",
+                      "format": "uri",
+                      "type": "string"
+                    },
+                    "endpoints": {
+                      "description": "Available endpoints for this API",
+                      "items": {
+                        "properties": {
+                          "description": {
+                            "example": "Get list of users",
+                            "type": "string"
+                          },
+                          "method": {
+                            "example": "GET",
+                            "type": "string"
+                          },
+                          "path": {
+                            "example": "/api/v1/users",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "errorRate": {
+                      "description": "Error rate percentage",
+                      "example": 0.5,
+                      "format": "float",
+                      "maximum": 100,
+                      "minimum": 0,
+                      "type": "number"
+                    },
+                    "https": {
+                      "description": "Whether the API supports HTTPS",
+                      "example": true,
+                      "type": "boolean"
+                    },
+                    "id": {
+                      "description": "Unique identifier for the API",
+                      "example": 275,
+                      "type": "integer"
+                    },
+                    "lastChecked": {
+                      "description": "When the API was last checked for availability",
+                      "format": "date-time",
+                      "type": "string"
+                    },
+                    "reliability": {
+                      "description": "Reliability percentage based on monitoring",
+                      "example": 99.5,
+                      "format": "float",
+                      "maximum": 100,
+                      "minimum": 0,
+                      "type": "number"
+                    },
+                    "tags": {
+                      "description": "Categories/tags associated with the API",
+                      "example": [
+                        "data",
+                        "testing",
+                        "development"
+                      ],
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "title": {
+                      "description": "Name of the API",
+                      "example": "Random Data API",
+                      "type": "string"
+                    },
+                    "url": {
+                      "description": "Base URL of the API",
+                      "example": "https://api.example.com",
+                      "format": "uri",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response with a random API"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "error": {
+                      "description": "Error message",
+                      "example": "Rate limit exceeded",
+                      "type": "string"
+                    },
+                    "message": {
+                      "description": "Detailed error message",
+                      "example": "You have exceeded the daily limit of 1000 requests. Please try again tomorrow.",
+                      "type": "string"
+                    },
+                    "statusCode": {
+                      "description": "HTTP status code",
+                      "example": 429,
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Rate limit exceeded (1000 requests per day)"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "error": {
+                      "description": "Error message",
+                      "example": "Rate limit exceeded",
+                      "type": "string"
+                    },
+                    "message": {
+                      "description": "Detailed error message",
+                      "example": "You have exceeded the daily limit of 1000 requests. Please try again tomorrow.",
+                      "type": "string"
+                    },
+                    "statusCode": {
+                      "description": "HTTP status code",
+                      "example": 429,
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /api/apis/{id}": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getAPIById",
+        "parameters": [
+          {
+            "description": "The unique identifier of the API",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "example": 275,
+              "type": "integer"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "auth": {
+                      "description": "Authentication method required",
+                      "example": "apiKey",
+                      "nullable": true,
+                      "type": "string"
+                    },
+                    "avgResponseTime": {
+                      "description": "Average response time in milliseconds",
+                      "example": 392,
+                      "nullable": true,
+                      "type": "integer"
+                    },
+                    "cors": {
+                      "description": "Whether CORS is enabled",
+                      "example": true,
+                      "type": "boolean"
+                    },
+                    "createdAt": {
+                      "description": "When the API was added to the directory",
+                      "format": "date-time",
+                      "type": "string"
+                    },
+                    "description": {
+                      "description": "Description of what the API does",
+                      "example": "Generate random data for testing and development",
+                      "type": "string"
+                    },
+                    "documentationUrl": {
+                      "description": "URL to the API documentation",
+                      "example": "https://api.example.com/docs",
+                      "format": "uri",
+                      "type": "string"
+                    },
+                    "endpoints": {
+                      "description": "Available endpoints for this API",
+                      "items": {
+                        "properties": {
+                          "description": {
+                            "example": "Get list of users",
+                            "type": "string"
+                          },
+                          "method": {
+                            "example": "GET",
+                            "type": "string"
+                          },
+                          "path": {
+                            "example": "/api/v1/users",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "errorRate": {
+                      "description": "Error rate percentage",
+                      "example": 0.5,
+                      "format": "float",
+                      "maximum": 100,
+                      "minimum": 0,
+                      "type": "number"
+                    },
+                    "https": {
+                      "description": "Whether the API supports HTTPS",
+                      "example": true,
+                      "type": "boolean"
+                    },
+                    "id": {
+                      "description": "Unique identifier for the API",
+                      "example": 275,
+                      "type": "integer"
+                    },
+                    "lastChecked": {
+                      "description": "When the API was last checked for availability",
+                      "format": "date-time",
+                      "type": "string"
+                    },
+                    "reliability": {
+                      "description": "Reliability percentage based on monitoring",
+                      "example": 99.5,
+                      "format": "float",
+                      "maximum": 100,
+                      "minimum": 0,
+                      "type": "number"
+                    },
+                    "tags": {
+                      "description": "Categories/tags associated with the API",
+                      "example": [
+                        "data",
+                        "testing",
+                        "development"
+                      ],
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "title": {
+                      "description": "Name of the API",
+                      "example": "Random Data API",
+                      "type": "string"
+                    },
+                    "url": {
+                      "description": "Base URL of the API",
+                      "example": "https://api.example.com",
+                      "format": "uri",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response with API details"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "error": {
+                      "description": "Error message",
+                      "example": "Rate limit exceeded",
+                      "type": "string"
+                    },
+                    "message": {
+                      "description": "Detailed error message",
+                      "example": "You have exceeded the daily limit of 1000 requests. Please try again tomorrow.",
+                      "type": "string"
+                    },
+                    "statusCode": {
+                      "description": "HTTP status code",
+                      "example": 429,
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "API not found"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "error": {
+                      "description": "Error message",
+                      "example": "Rate limit exceeded",
+                      "type": "string"
+                    },
+                    "message": {
+                      "description": "Detailed error message",
+                      "example": "You have exceeded the daily limit of 1000 requests. Please try again tomorrow.",
+                      "type": "string"
+                    },
+                    "statusCode": {
+                      "description": "HTTP status code",
+                      "example": 429,
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Rate limit exceeded (1000 requests per day)"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "error": {
+                      "description": "Error message",
+                      "example": "Rate limit exceeded",
+                      "type": "string"
+                    },
+                    "message": {
+                      "description": "Detailed error message",
+                      "example": "You have exceeded the daily limit of 1000 requests. Please try again tomorrow.",
+                      "type": "string"
+                    },
+                    "statusCode": {
+                      "description": "HTTP status code",
+                      "example": 429,
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "securitySource": "unspecified"
       }
     }
   }
