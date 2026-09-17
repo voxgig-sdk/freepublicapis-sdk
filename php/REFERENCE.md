@@ -103,8 +103,6 @@ $api = $client->Api();
 | `https` | `bool` | No | Whether the API supports HTTPS |
 | `id` | `int` | No | Unique identifier for the API |
 | `lastChecked` | `string` | No | When the API was last checked for availability |
-| `method` | `string` | No |  |
-| `path` | `string` | No |  |
 | `reliability` | `float` | No | Reliability percentage based on monitoring |
 | `tags` | `array` | No | Categories/tags associated with the API |
 | `title` | `string` | No | Name of the API |

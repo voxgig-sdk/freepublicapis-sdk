@@ -76,16 +76,6 @@ main: kit: entity: api: {
       type: "`$STRING`"
     }
     {
-      name: "method"
-      req: false
-      type: "`$STRING`"
-    }
-    {
-      name: "path"
-      req: false
-      type: "`$STRING`"
-    }
-    {
       format: "float"
       name: "reliability"
       req: false

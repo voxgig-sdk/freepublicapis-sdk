@@ -252,8 +252,6 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 | `https` | Whether the API supports HTTPS |
 | `id` | Unique identifier for the API |
 | `lastChecked` | When the API was last checked for availability |
-| `method` |  |
-| `path` |  |
 | `reliability` | Reliability percentage based on monitoring |
 | `tags` | Categories/tags associated with the API |
 | `title` | Name of the API |
@@ -294,8 +292,6 @@ Create an instance: `local api = client:Api(nil)`
 | `https` | `boolean` | Whether the API supports HTTPS |
 | `id` | `number` | Unique identifier for the API |
 | `lastChecked` | `string` | When the API was last checked for availability |
-| `method` | `string` |  |
-| `path` | `string` |  |
 | `reliability` | `number` | Reliability percentage based on monitoring |
 | `tags` | `table` | Categories/tags associated with the API |
 | `title` | `string` | Name of the API |
@@ -456,6 +452,7 @@ Use `helpers.to_map()` to safely validate that a value is a table.
 lua/
 ├── freepublicapis_sdk.lua    -- Main SDK module
 ├── config.lua               -- Configuration
+├── schema.lua               -- Generated option + entity specs
 ├── features.lua             -- Feature factory
 ├── core/                    -- Core types and context
 ├── entity/                  -- Entity implementations

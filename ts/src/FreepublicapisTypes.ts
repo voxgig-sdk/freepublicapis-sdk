@@ -17,8 +17,6 @@ export interface Api {
   https?: boolean
   id?: number
   lastChecked?: string
-  method?: string
-  path?: string
   reliability?: number
   tags?: any[]
   title?: string

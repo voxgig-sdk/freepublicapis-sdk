@@ -84,11 +84,6 @@ declare class Config {
                 name: string;
                 short: string;
                 type: string;
-            } | {
-                name: string;
-                type: string;
-                short?: undefined;
-                format?: undefined;
             })[];
             id: {
                 field: string;

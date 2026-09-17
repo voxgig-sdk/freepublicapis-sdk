@@ -318,8 +318,6 @@ The `prepare()` method returns:
 | `https` | Whether the API supports HTTPS |
 | `id` | Unique identifier for the API |
 | `lastChecked` | When the API was last checked for availability |
-| `method` |  |
-| `path` |  |
 | `reliability` | Reliability percentage based on monitoring |
 | `tags` | Categories/tags associated with the API |
 | `title` | Name of the API |
@@ -360,8 +358,6 @@ Create an instance: `const api = client.Api()`
 | `https` | `boolean` | Whether the API supports HTTPS |
 | `id` | `number` | Unique identifier for the API |
 | `lastChecked` | `string` | When the API was last checked for availability |
-| `method` | `string` |  |
-| `path` | `string` |  |
 | `reliability` | `number` | Reliability percentage based on monitoring |
 | `tags` | `any[]` | Categories/tags associated with the API |
 | `title` | `string` | Name of the API |

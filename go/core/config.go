@@ -149,14 +149,6 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"name": "method",
-						"type": "`$STRING`",
-					},
-					map[string]any{
-						"name": "path",
-						"type": "`$STRING`",
-					},
-					map[string]any{
 						"format": "float",
 						"name": "reliability",
 						"short": "Reliability percentage based on monitoring",

@@ -264,8 +264,6 @@ returns a result `Hash` with these keys:
 | `https` | Whether the API supports HTTPS |
 | `id` | Unique identifier for the API |
 | `lastChecked` | When the API was last checked for availability |
-| `method` |  |
-| `path` |  |
 | `reliability` | Reliability percentage based on monitoring |
 | `tags` | Categories/tags associated with the API |
 | `title` | Name of the API |
@@ -306,8 +304,6 @@ Create an instance: `api = client.Api`
 | `https` | `Boolean` | Whether the API supports HTTPS |
 | `id` | `Integer` | Unique identifier for the API |
 | `lastChecked` | `String` | When the API was last checked for availability |
-| `method` | `String` |  |
-| `path` | `String` |  |
 | `reliability` | `Float` | Reliability percentage based on monitoring |
 | `tags` | `Array` | Categories/tags associated with the API |
 | `title` | `String` | Name of the API |
@@ -470,6 +466,7 @@ Use `Helpers.to_map()` to safely validate that a value is a hash.
 rb/
 ├── Freepublicapis_sdk.rb       -- Main SDK module
 ├── config.rb                  -- Configuration
+├── schema.rb                  -- Generated option + entity specs
 ├── features.rb                -- Feature factory
 ├── core/                      -- Core types and context
 ├── entity/                    -- Entity implementations

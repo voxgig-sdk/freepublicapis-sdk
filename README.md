@@ -105,12 +105,12 @@ local results, err = client:Api():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/freepublicapis-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/freepublicapis-sdk/releases) |
-| Python | `voxgig-sdk-freepublicapis` | publish pending — [install from git tag](https://github.com/voxgig-sdk/freepublicapis-sdk/releases) |
-| PHP | `voxgig-sdk/freepublicapis` | publish pending — [install from git tag](https://github.com/voxgig-sdk/freepublicapis-sdk/releases) |
+| TypeScript | `@voxgig-sdk/freepublicapis-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/freepublicapis-sdk/tags) |
+| Python | `voxgig-sdk-freepublicapis` | publish pending — [install from git tag](https://github.com/voxgig-sdk/freepublicapis-sdk/tags) |
+| PHP | `voxgig-sdk/freepublicapis` | publish pending — [install from git tag](https://github.com/voxgig-sdk/freepublicapis-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/freepublicapis-sdk/go` | `go get github.com/voxgig-sdk/freepublicapis-sdk/go@latest` |
-| Ruby | `voxgig-sdk-freepublicapis` | publish pending — [install from git tag](https://github.com/voxgig-sdk/freepublicapis-sdk/releases) |
-| Lua | `voxgig-sdk-freepublicapis` | publish pending — [install from git tag](https://github.com/voxgig-sdk/freepublicapis-sdk/releases) |
+| Ruby | `voxgig-sdk-freepublicapis` | publish pending — [install from git tag](https://github.com/voxgig-sdk/freepublicapis-sdk/tags) |
+| Lua | `voxgig-sdk-freepublicapis` | publish pending — [install from git tag](https://github.com/voxgig-sdk/freepublicapis-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/freepublicapis-sdk/go-cli` | `go install github.com/voxgig-sdk/freepublicapis-sdk/go-cli/cmd/freepublicapis@latest` |
 | Go MCP server | `github.com/voxgig-sdk/freepublicapis-sdk/go-mcp` | `go get github.com/voxgig-sdk/freepublicapis-sdk/go-mcp@latest` |
 

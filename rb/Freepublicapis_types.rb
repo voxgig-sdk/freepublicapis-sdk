@@ -43,12 +43,6 @@
 # @!attribute [rw] lastChecked
 #   @return [String, nil]
 #
-# @!attribute [rw] method
-#   @return [String, nil]
-#
-# @!attribute [rw] path
-#   @return [String, nil]
-#
 # @!attribute [rw] reliability
 #   @return [Float, nil]
 #
@@ -72,8 +66,6 @@ Api = Struct.new(
   :https,
   :id,
   :lastChecked,
-  :method,
-  :path,
   :reliability,
   :tags,
   :title,

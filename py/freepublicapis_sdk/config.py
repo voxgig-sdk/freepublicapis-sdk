@@ -174,14 +174,6 @@ def make_config():
             "type": "`$STRING`",
           },
           {
-            "name": "method",
-            "type": "`$STRING`",
-          },
-          {
-            "name": "path",
-            "type": "`$STRING`",
-          },
-          {
             "format": "float",
             "name": "reliability",
             "short": "Reliability percentage based on monitoring",

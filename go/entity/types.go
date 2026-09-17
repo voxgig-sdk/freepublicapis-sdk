@@ -25,8 +25,6 @@ type Api struct {
 	Https *bool `json:"https,omitempty"`
 	Id *int `json:"id,omitempty"`
 	LastChecked *string `json:"lastChecked,omitempty"`
-	Method *string `json:"method,omitempty"`
-	Path *string `json:"path,omitempty"`
 	Reliability *float64 `json:"reliability,omitempty"`
 	Tags *[]any `json:"tags,omitempty"`
 	Title *string `json:"title,omitempty"`

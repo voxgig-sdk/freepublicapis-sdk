@@ -267,8 +267,6 @@ On error, `ok` is `False` and `err` contains the error value.
 | `https` | Whether the API supports HTTPS |
 | `id` | Unique identifier for the API |
 | `lastChecked` | When the API was last checked for availability |
-| `method` |  |
-| `path` |  |
 | `reliability` | Reliability percentage based on monitoring |
 | `tags` | Categories/tags associated with the API |
 | `title` | Name of the API |
@@ -309,8 +307,6 @@ Create an instance: `api = client.Api()`
 | `https` | `bool` | Whether the API supports HTTPS |
 | `id` | `int` | Unique identifier for the API |
 | `lastChecked` | `str` | When the API was last checked for availability |
-| `method` | `str` |  |
-| `path` | `str` |  |
 | `reliability` | `float` | Reliability percentage based on monitoring |
 | `tags` | `list` | Categories/tags associated with the API |
 | `title` | `str` | Name of the API |
@@ -471,6 +467,7 @@ Use `helpers.to_map()` to safely validate that a value is a dict.
 py/
 ├── freepublicapis_sdk.py         -- Main SDK module
 ├── config.py                    -- Configuration
+├── schema.py                    -- Generated option + entity specs
 ├── features.py                  -- Feature factory
 ├── core/                        -- Core types and context
 ├── entity/                      -- Entity implementations

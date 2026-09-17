@@ -127,9 +127,9 @@ class Config {
 
     entity: {
       
-      api: {
-      },
-
+        api: {
+        },
+  
     }
   }
 
@@ -194,14 +194,6 @@ class Config {
           "format": "date-time",
           "name": "lastChecked",
           "short": "When the API was last checked for availability",
-          "type": "`$STRING`"
-        },
-        {
-          "name": "method",
-          "type": "`$STRING`"
-        },
-        {
-          "name": "path",
           "type": "`$STRING`"
         },
         {

@@ -28,8 +28,6 @@ class Api(TypedDict, total=False):
     https: bool
     id: int
     lastChecked: str
-    method: str
-    path: str
     reliability: float
     tags: list
     title: str

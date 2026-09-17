@@ -18,8 +18,6 @@
 ---@field https? boolean
 ---@field id? number
 ---@field lastChecked? string
----@field method? string
----@field path? string
 ---@field reliability? number
 ---@field tags? table
 ---@field title? string

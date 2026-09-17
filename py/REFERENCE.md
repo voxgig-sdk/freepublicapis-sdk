@@ -98,8 +98,6 @@ api = client.Api()
 | `https` | `bool` | No | Whether the API supports HTTPS |
 | `id` | `int` | No | Unique identifier for the API |
 | `lastChecked` | `str` | No | When the API was last checked for availability |
-| `method` | `str` | No |  |
-| `path` | `str` | No |  |
 | `reliability` | `float` | No | Reliability percentage based on monitoring |
 | `tags` | `list` | No | Categories/tags associated with the API |
 | `title` | `str` | No | Name of the API |

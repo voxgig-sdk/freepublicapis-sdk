@@ -104,8 +104,6 @@ api = client.Api
 | `https` | `Boolean` | No | Whether the API supports HTTPS |
 | `id` | `Integer` | No | Unique identifier for the API |
 | `lastChecked` | `String` | No | When the API was last checked for availability |
-| `method` | `String` | No |  |
-| `path` | `String` | No |  |
 | `reliability` | `Float` | No | Reliability percentage based on monitoring |
 | `tags` | `Array` | No | Categories/tags associated with the API |
 | `title` | `String` | No | Name of the API |

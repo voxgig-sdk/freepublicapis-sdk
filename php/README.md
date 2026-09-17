@@ -275,8 +275,6 @@ On error, `ok` is `false` and `$err` contains the error value.
 | `https` | Whether the API supports HTTPS |
 | `id` | Unique identifier for the API |
 | `lastChecked` | When the API was last checked for availability |
-| `method` |  |
-| `path` |  |
 | `reliability` | Reliability percentage based on monitoring |
 | `tags` | Categories/tags associated with the API |
 | `title` | Name of the API |
@@ -317,8 +315,6 @@ Create an instance: `$api = $client->Api();`
 | `https` | `bool` | Whether the API supports HTTPS |
 | `id` | `int` | Unique identifier for the API |
 | `lastChecked` | `string` | When the API was last checked for availability |
-| `method` | `string` |  |
-| `path` | `string` |  |
 | `reliability` | `float` | Reliability percentage based on monitoring |
 | `tags` | `array` | Categories/tags associated with the API |
 | `title` | `string` | Name of the API |
@@ -481,6 +477,7 @@ Use `Helpers::to_map()` to safely validate that a value is an array.
 php/
 ├── freepublicapis_sdk.php          -- Main SDK class
 ├── config.php                     -- Configuration
+├── schema.php                     -- Generated option + entity specs
 ├── features.php                   -- Feature factory
 ├── core/                          -- Core types and context
 ├── entity/                        -- Entity implementations
